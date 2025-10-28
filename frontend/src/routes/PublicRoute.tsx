@@ -1,13 +1,13 @@
-import React, { type FC, type ReactNode } from 'react'
-import { Navigate } from 'react-router-dom'
+import React, { type ReactNode } from "react";
+import { Navigate } from "react-router-dom";
 
 interface PublicRouteProps {
-  children: ReactNode
-  isAuthenticated: boolean
+  children: ReactNode;
+  isAuthenticated: boolean;
 }
 
-const PublicRoute:FC<PublicRouteProps> = ({ children, isAuthenticated }) => {
-  return isAuthenticated ? <Navigate to="/kanban" replace /> : <>{children}</>
-}
+const PublicRoute = ({ children, isAuthenticated }: PublicRouteProps) => {
+  return isAuthenticated ? <Navigate to="/kanban" replace /> : <>{children}</>;
+};
 
-export default PublicRoute
+export default PublicRoute;

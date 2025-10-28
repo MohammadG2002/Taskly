@@ -1,24 +1,26 @@
-import React, { Suspense, lazy } from 'react'
-import type { FC, ReactElement } from 'react'
-import { Routes, Route, Navigate } from 'react-router-dom'
-import PublicRoute from './PublicRoute'
-import PrivateRoute from './PrivateRoute'
+import React, { Suspense, lazy } from "react";
+import type { ReactElement } from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import PublicRoute from "./PublicRoute";
+import PrivateRoute from "./PrivateRoute";
 
-const SignIn = lazy(() => import('../pages/auth/signin/SignIn'))
-const SignUp = lazy(() => import('../pages/auth/signup/SignUp'))
-const ResetPassword = lazy(() => import('../pages/auth/resetpassword/ResetPassword'))
-const Kanban = lazy(() => import('../pages/kanban/Kanban'))
-const NotFound = lazy(() => import('../pages/notfound/NotFound'))
+const SignIn = lazy(() => import("../pages/auth/signin/SignIn"));
+const SignUp = lazy(() => import("../pages/auth/signup/SignUp"));
+const ResetPassword = lazy(
+  () => import("../pages/auth/resetpassword/ResetPassword")
+);
+const Kanban = lazy(() => import("../pages/kanban/Kanban"));
+const NotFound = lazy(() => import("../pages/notfound/NotFound"));
 
 const LoadingFallback = (): ReactElement => (
-  <div style={{ textAlign: 'center', padding: 40 }}>
+  <div>
     <h4>Loading...</h4>
   </div>
-)
+);
 
-const isAuthenticated = false
+const isAuthenticated = false;
 
-const AppRoute: FC = () => {
+const AppRoute = () => {
   return (
     <Suspense fallback={<LoadingFallback />}>
       <Routes>
@@ -64,7 +66,7 @@ const AppRoute: FC = () => {
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
-  )
-}
+  );
+};
 
-export default AppRoute
+export default AppRoute;

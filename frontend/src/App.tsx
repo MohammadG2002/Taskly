@@ -1,8 +1,13 @@
-import React from 'react'
-import AppRoute from './routes/AppRoute'
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import AppRoute from "./routes/AppRoute";
 
-const App: React.FC = () => {
-  return <AppRoute />
-}
+const App = () => {
+  return (
+    <BrowserRouter>
+      <AppRoute />
+    </BrowserRouter>
+  );
+};
 
-export default App
+export default App;
