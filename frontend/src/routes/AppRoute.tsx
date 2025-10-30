@@ -19,7 +19,7 @@ const LoadingFallback = (): ReactElement => (
   </div>
 );
 
-const isAuthenticated = false;
+const isAuthenticated = true;
 
 const AppRoute = () => {
   return (

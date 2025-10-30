@@ -1,0 +1,17 @@
+.sidebar-link {
+  display: block;
+  text-decoration: none;
+  color: #333;
+  padding: 0.5rem 0;
+  width: 100%;
+  padding: 0.25rem 0.5rem 0.25rem 0.75rem;
+  text-align: start;
+  transition: background-color 0.2s ease;
+  line-height: 2rem;
+}
+
+.sidebar-link:hover {
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
