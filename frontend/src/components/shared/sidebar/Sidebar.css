@@ -1,0 +1,17 @@
+.sidebar {
+  min-height: 100%;
+  width: var(--sidebar-width);
+  background-color: #34495e;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1201;
+}
+
+.sidebar.collapsed {
+  width: var(--sidebar-collapsed-width);
+}

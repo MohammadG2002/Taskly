@@ -3,6 +3,7 @@ import type { ReactElement } from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import PublicRoute from "./PublicRoute";
 import PrivateRoute from "./PrivateRoute";
+import { Layout } from "../components/layout/Layout";
 
 const SignIn = lazy(() => import("../pages/auth/signin/SignIn"));
 const SignUp = lazy(() => import("../pages/auth/signup/SignUp"));
@@ -57,7 +58,9 @@ const AppRoute = () => {
           path="/kanban"
           element={
             <PrivateRoute isAuthenticated={isAuthenticated}>
-              <Kanban />
+              <Layout>
+                <Kanban />
+              </Layout>
             </PrivateRoute>
           }
         />

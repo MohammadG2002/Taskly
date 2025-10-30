@@ -1,8 +1,16 @@
-import React from 'react'
-import "./Sidebar.css"
+import React from "react";
+import "./Sidebar.css";
 
-export const Sidebar = () => {
-  return (
-    <div>Sidebar</div>
-  )
+interface SidebarProps {
+  isCollapsed: boolean;
+  toggle: () => void;
 }
+
+export const Sidebar = ({ isCollapsed, toggle }: SidebarProps) => {
+  return (
+    <div className={`sidebar ${isCollapsed ? "collapsed" : ""}`}>
+      Sidebar
+      <button onClick={toggle}>Toggle</button>
+    </div>
+  );
+};
