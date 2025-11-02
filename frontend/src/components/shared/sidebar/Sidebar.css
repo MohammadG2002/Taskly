@@ -10,10 +10,11 @@
   left: 0;
   position: fixed;
   z-index: 1201;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow-y: auto;
+  overflow-x: visible;
   transition: width 0.3s ease;
   border: 1px solid #ddd;
+  gap: 1rem;
 }
 
 .sidebar.collapsed {
@@ -29,7 +30,7 @@
 .overview-header {
   display: flex;
   align-items: center;
-  font-size: 1.2rem;
+  font-size: 0.6875rem;
   line-height: 1.5;
   font-weight: 700;
   color: #555;
@@ -46,8 +47,8 @@
 }
 
 .down-arrow img {
-  width: 1rem;
-  height: 1rem;
+  width: 0.7rem;
+  height: 0.7rem;
   cursor: pointer;
   opacity: 0;
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -82,4 +83,10 @@
   opacity: 0;
   overflow: hidden;
   height: 0;
+}
+
+.sidebar.collapsed .sidebar-logo h1,
+.sidebar.collapsed .overview-header,
+.sidebar.collapsed .sidebar-link span {
+  display: none;
 }

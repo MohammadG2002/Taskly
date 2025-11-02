@@ -1,12 +1,24 @@
 import React from "react";
 import "./SidebarLink.css";
-import { Link } from "react-router-dom";
+import { assets } from "../../../../assets/assets";
+import { NavLink } from "react-router-dom";
 
-const SidebarLink = () => {
+interface SidebarLinkProps {
+  linkName: string;
+  path: string;
+}
+
+const SidebarLink = ({ linkName, path }: SidebarLinkProps) => {
   return (
-    <Link to="/kanban" className="sidebar-link">
-      Kanban
-    </Link>
+    <NavLink
+      to={path}
+      className={({ isActive }) =>
+        `sidebar-link ${isActive ? "is-active" : ""}`
+      }
+    >
+      <img src={assets.kanban} alt="" aria-hidden="true" />
+      <span>{linkName}</span>
+    </NavLink>
   );
 };
 

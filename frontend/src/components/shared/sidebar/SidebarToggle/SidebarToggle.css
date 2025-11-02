@@ -1,0 +1,28 @@
+.sidebar .sidebar__toggle {
+  width: 2rem;
+  height: 2rem;
+  background-color: white;
+  border: 1px solid #ccc;
+  font-size: 2rem;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 50%;
+  position: fixed;
+  top: 2rem;
+  left: calc(var(--sidebar-width) - 1rem);
+  transform: none;
+  z-index: 1300;
+  transition: left 0.3s ease;
+}
+
+.sidebar__toggle img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.sidebar.collapsed .sidebar__toggle {
+  left: calc(var(--sidebar-collapsed-width) - 1rem);
+  transition: left 0.3s ease;
+}
