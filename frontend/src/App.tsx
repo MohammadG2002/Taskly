@@ -1,10 +1,13 @@
-import React from 'react';
-import SignUp from './pages/auth/signup/SignUp';
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import AppRoute from "./routes/AppRoute";
 
-export default function App() {
+const App = () => {
   return (
-    <div>
-      <SignUp />
-    </div>
+    <BrowserRouter>
+      <AppRoute />
+    </BrowserRouter>
   );
-}
+};
+
+export default App;
