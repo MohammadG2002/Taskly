@@ -1,0 +1,5 @@
+.kanban-page {
+  padding: 20px;
+  min-height: calc(100vh - var(--navbar-height));
+  height: fit-content;
+}

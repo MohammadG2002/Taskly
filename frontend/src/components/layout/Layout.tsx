@@ -1,8 +1,22 @@
-import React from 'react'
-import './Layout.css'
+import React, { type ReactNode } from "react";
+import "./Layout.css";
+import { Sidebar } from "../shared/sidebar/Sidebar";
+import { Navbar } from "../shared/navbar/Navbar";
+import useToggle from "../../hooks/useToggle";
 
-export const Layout = () => {
-  return (
-    <div>Layout</div>
-  )
+interface LayoutProps {
+  children: ReactNode;
 }
+
+export const Layout = ({ children }: LayoutProps) => {
+  const { isCollapsed, toggle } = useToggle(false);
+  return (
+    <div className="layout">
+      <Sidebar isCollapsed={isCollapsed} toggle={toggle} />
+      <div className={`layout-main ${isCollapsed ? "expanded" : ""}`}>
+        <Navbar />
+        <main className="layout-content">{children}</main>
+      </div>
+    </div>
+  );
+};

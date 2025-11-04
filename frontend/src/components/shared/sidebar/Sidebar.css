@@ -1,0 +1,92 @@
+.sidebar {
+  min-height: 100%;
+  width: var(--sidebar-width);
+  background-color: white;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 1201;
+  overflow-y: auto;
+  overflow-x: visible;
+  transition: width 0.3s ease;
+  border: 1px solid #ddd;
+  gap: 1rem;
+}
+
+.sidebar.collapsed {
+  width: var(--sidebar-collapsed-width);
+}
+
+.sidebar-overview {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.overview-header {
+  display: flex;
+  align-items: center;
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: #555;
+  cursor: pointer;
+  margin-bottom: 10px;
+  gap: 0;
+  transition: gap 0.3s ease;
+}
+
+.down-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.down-arrow img {
+  width: 0.7rem;
+  height: 0.7rem;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.overview-header:hover {
+  gap: 0.3rem;
+  transition: gap 0.3s ease;
+}
+
+.overview-header:hover .down-arrow img {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.down-arrow.closed img {
+  transform: rotate(-90deg);
+  transition: transform 0.3s ease;
+}
+
+.overview-links {
+  list-style: none;
+  margin-top: 0;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.overview-links.closed {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  height: 0;
+}
+
+.sidebar.collapsed .sidebar-logo h1,
+.sidebar.collapsed .overview-header,
+.sidebar.collapsed .sidebar-link span {
+  display: none;
+}

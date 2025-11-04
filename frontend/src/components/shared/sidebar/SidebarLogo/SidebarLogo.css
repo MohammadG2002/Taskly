@@ -1,0 +1,18 @@
+.sidebar-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.25rem;
+  margin-left: 0.4rem;
+}
+
+.logo-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 10px;
+}
+
+.logo-title {
+  font-size: 1.5rem;
+  color: #333;
+  justify-self: center;
+}
