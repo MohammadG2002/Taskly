@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "name": "Mohammad Ghanim",
+    "username": "mohammadg",
+    "email": "mohadahmed90@gmail.com",
+    "phone": "0569174017",
+    "address": {
+      "city": "Nablus",
+      "street": "Tel St.",
+      "zipcode": "00970"
+    },
+    "avatar": "/avatar-25.webp"
+
+  },
+  {
+    "id": 2,
+    "name": "Sara Ahmad",
+    "username": "sarahmad",
+    "email": "sara@example.com",
+    "phone": "0569001122",
+    "address": {
+      "city": "Ramallah",
+      "street": "Main Road",
+      "zipcode": "00972"
+    },
+    "avatar": "https://randomuser.me/api/portraits/women/68.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Khaled Youssef",
+    "username": "khaledysf",
+    "email": "khaled@example.com",
+    "phone": "0598765432",
+    "address": {
+      "city": "Jenin",
+      "street": "Market St.",
+      "zipcode": "00973"
+    },
+    "avatar": "https://randomuser.me/api/portraits/men/55.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Lina Mansour",
+    "username": "linamnsr",
+    "email": "lina@example.com",
+    "phone": "0571234567",
+    "address": {
+      "city": "Bethlehem",
+      "street": "Church St.",
+      "zipcode": "00974"
+    },
+    "avatar": "https://randomuser.me/api/portraits/women/45.jpg"
+  },{
+    "id": 5,
+    "name": "Omar Khalil",
+    "username": "omarkhl",
+    "email": "omar@example.com",
+    "phone": "0587654321",
+    "address": {
+      "city": "Hebron",
+      "street": "Old City Rd.",
+      "zipcode": "00975"
+    },
+    "avatar": "https://randomuser.me/api/portraits/men/55.jpg"
+  }
+]
