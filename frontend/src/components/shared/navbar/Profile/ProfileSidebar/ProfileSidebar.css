@@ -9,6 +9,7 @@
 
 .profile-sidebar__backdrop.show {
   width: 100%;
+  height: 100vh;
 }
 
 .profile-sidebar__container {
