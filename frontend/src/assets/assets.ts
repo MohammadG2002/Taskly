@@ -15,6 +15,7 @@ import profile from "./profile.svg";
 import projects from "./projects.svg";
 import subscription from "./subscription.svg";
 import security from "./security.svg";
+import rocket from "./rocket.svg";
 export const assets = {
   logo,
   downArrow,
@@ -33,4 +34,5 @@ export const assets = {
   projects,
   subscription,
   security,
+  rocket,
 };

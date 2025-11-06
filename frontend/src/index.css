@@ -30,6 +30,10 @@ body {
   --sidebar-width: 18.75rem;
   --sidebar-collapsed-width: 5.5rem;
   --navbar-height: 3.75rem;
+
+  --font-red-color: #b71d18;
+  --bg-red-color: #ff563029;
+  --bg-red-hover-color: #ff56304d;
 }
 
 ::-webkit-scrollbar-track {
@@ -41,7 +45,7 @@ body {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 0px;
 }
 
 ::-webkit-scrollbar-thumb {

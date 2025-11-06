@@ -24,7 +24,7 @@
       "street": "Main Road",
       "zipcode": "00972"
     },
-    "avatar": "https://randomuser.me/api/portraits/women/68.jpg"
+    "avatar": "/avatar-3.webp"
   },
   {
     "id": 3,
@@ -37,22 +37,10 @@
       "street": "Market St.",
       "zipcode": "00973"
     },
-    "avatar": "https://randomuser.me/api/portraits/men/55.jpg"
+    "avatar": "/avatar-2.webp"
   },
   {
     "id": 4,
-    "name": "Lina Mansour",
-    "username": "linamnsr",
-    "email": "lina@example.com",
-    "phone": "0571234567",
-    "address": {
-      "city": "Bethlehem",
-      "street": "Church St.",
-      "zipcode": "00974"
-    },
-    "avatar": "https://randomuser.me/api/portraits/women/45.jpg"
-  },{
-    "id": 5,
     "name": "Omar Khalil",
     "username": "omarkhl",
     "email": "omar@example.com",
@@ -62,6 +50,18 @@
       "street": "Old City Rd.",
       "zipcode": "00975"
     },
-    "avatar": "https://randomuser.me/api/portraits/men/55.jpg"
+    "avatar": "/avatar-4.webp"
+  },{
+    "id": 5,
+    "name": "Lina Mansour",
+    "username": "linamnsr",
+    "email": "lina@example.com",
+    "phone": "0571234567",
+    "address": {
+      "city": "Bethlehem",
+      "street": "Church St.",
+      "zipcode": "00974"
+    },
+    "avatar": "/avatar-5.webp"
   }
 ]
