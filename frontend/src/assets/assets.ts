@@ -9,6 +9,7 @@ import notifications from "./notifications.svg";
 import settings from "./settings.svg";
 import search from "./search.svg";
 import avatar from "./avatar-25.webp";
+import updownArrow from "./up-down-arrows.svg";
 
 export const assets = {
   logo,
@@ -22,4 +23,5 @@ export const assets = {
   settings,
   search,
   avatar,
+  updownArrow,
 };
