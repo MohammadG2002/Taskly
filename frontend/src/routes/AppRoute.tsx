@@ -20,8 +20,6 @@ const LoadingFallback = (): ReactElement => (
   </div>
 );
 
-const isAuthenticated = true;
-
 const AppRoute = () => {
   const { currentAuth } = useAuth();
   const isAuthenticated = currentAuth;
