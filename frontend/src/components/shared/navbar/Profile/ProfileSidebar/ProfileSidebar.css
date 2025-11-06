@@ -26,6 +26,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
 }
 
 .profile-sidebar__container.show {
@@ -43,6 +45,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: linear-gradient(
+    to bottom left,
+    hsla(197, 100%, 50%, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 40%,
+    rgba(255, 255, 255, 0.2) 60%,
+    hsla(317, 88%, 87%, 0.2) 100%
+  );
 }
 
 .profile-sidebar__content::-webkit-scrollbar {
@@ -105,4 +114,9 @@
   bottom: 0;
   background-color: white;
   width: 100%;
+  background: linear-gradient(
+    to bottom left,
+    white 0%,
+    hsla(317, 88%, 87%, 0.2) 50%
+  );
 }
