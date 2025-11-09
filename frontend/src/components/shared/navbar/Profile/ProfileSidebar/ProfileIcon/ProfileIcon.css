@@ -1,0 +1,28 @@
+.profile__icon {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  outline: 3px solid #25baff;
+  outline-offset: 2px;
+  margin: 5px;
+}
+
+.profile__details {
+  text-align: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.profile__name {
+  font-size: 1rem;
+  color: #1c252e;
+  font-weight: 600;
+}
+
+.profile__email {
+  font-size: 0.875rem;
+  word-wrap: break-word;
+  color: rgb(88, 88, 88);
+  font-weight: 400;
+}

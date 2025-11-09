@@ -9,9 +9,13 @@ import notifications from "./notifications.svg";
 import settings from "./settings.svg";
 import search from "./search.svg";
 import avatar from "./avatar-25.webp";
-import updownArrow from "./up-down-arrows.svg";
-import plusSign from "./plus-sign.svg";
-
+import cancel from "./cancel.svg";
+import home from "./home.svg";
+import profile from "./profile.svg";
+import projects from "./projects.svg";
+import subscription from "./subscription.svg";
+import security from "./security.svg";
+import rocket from "./rocket.svg";
 export const assets = {
   logo,
   downArrow,
@@ -24,6 +28,11 @@ export const assets = {
   settings,
   search,
   avatar,
-  updownArrow,
-  plusSign,
+  cancel,
+  home,
+  profile,
+  projects,
+  subscription,
+  security,
+  rocket,
 };
