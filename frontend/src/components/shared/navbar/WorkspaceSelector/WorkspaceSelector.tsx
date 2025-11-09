@@ -3,6 +3,7 @@ import "./WorkspaceSelector.css";
 import workspaces from "../../../../mocks/workspaces.json";
 import { assets } from "../../../../assets/assets";
 import WorkspaceItem from "./WorkspaceItem/WorkspaceItem";
+import { Link } from "react-router-dom";
 
 const WorkspaceSelector = () => {
   const [currentWorkspace, setCurrentWorkspace] = useState(workspaces[0]);
@@ -41,6 +42,15 @@ const WorkspaceSelector = () => {
                 setIsOpen={setIsOpen}
               />
             ))}
+            <div className="divider" />
+            <div className="workspace-create">
+              <img
+                src={assets.plusSign}
+                alt="+"
+                className="workspace-plus-sign"
+              />
+              <p className="workspace-create-text">Create Workspace</p>
+            </div>
           </div>
         </>
       )}

@@ -10,6 +10,7 @@ import settings from "./settings.svg";
 import search from "./search.svg";
 import avatar from "./avatar-25.webp";
 import updownArrow from "./up-down-arrows.svg";
+import plusSign from "./plus-sign.svg";
 
 export const assets = {
   logo,
@@ -24,4 +25,5 @@ export const assets = {
   search,
   avatar,
   updownArrow,
+  plusSign,
 };

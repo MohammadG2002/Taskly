@@ -55,6 +55,14 @@
   border-radius: 0.5rem;
   z-index: 20;
   padding: 0.5rem;
+  background: linear-gradient(
+    to bottom left,
+    rgba(246, 252, 255, 0.99) 0%,
+    rgba(255, 255, 255, 0.99) 40%,
+    rgba(255, 255, 255, 0.99) 60%,
+    rgba(255, 246, 252, 0.99) 100%
+  );
+  backdrop-filter: blur(6px);
 }
 
 .workspace-dropdown .workspace-item {
@@ -64,4 +72,41 @@
   padding: 0.5rem;
   border-radius: 0.5rem;
   cursor: pointer;
+}
+
+.divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 0.5rem 0;
+  border: 1px dashed rgba(145 158 171 / 20%);
+  border-width: 0px 0px thin;
+}
+
+.workspace-create {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 0.5rem;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.workspace-create:hover {
+  background-color: #f0f0f08c;
+}
+
+.workspace-plus-sign {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+
+.workspace-create-text {
+  width: fit-content;
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #1c252e;
+  border: none;
+  background-color: transparent;
+  justify-content: start;
 }
