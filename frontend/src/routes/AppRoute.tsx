@@ -4,6 +4,7 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import PublicRoute from "./PublicRoute";
 import PrivateRoute from "./PrivateRoute";
 import { Layout } from "../components/layout/Layout";
+import { useAuth } from "../context/AuthContext";
 
 const SignIn = lazy(() => import("../pages/auth/signin/SignIn"));
 const SignUp = lazy(() => import("../pages/auth/signup/SignUp"));
@@ -19,9 +20,9 @@ const LoadingFallback = (): ReactElement => (
   </div>
 );
 
-const isAuthenticated = false;
-
 const AppRoute = () => {
+  const { currentAuth } = useAuth();
+  const isAuthenticated = currentAuth;
   return (
     <Suspense fallback={<LoadingFallback />}>
       <Routes>

@@ -1,0 +1,125 @@
+.profile-sidebar__backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+  width: 0;
+}
+
+.profile-sidebar__backdrop.show {
+  width: 100%;
+  height: 100vh;
+}
+
+.profile-sidebar__container {
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20rem;
+  height: 100vh;
+  background: white;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.082);
+  transform: translateX(100%);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out,
+    visibility 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+.profile-sidebar__container.show {
+  visibility: visible;
+  transform: translateX(0);
+  box-shadow: 0px 0px 100px rgba(0, 0, 0, 0.22);
+}
+
+.profile-sidebar__content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100% - 5rem);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(
+    to bottom left,
+    hsla(197, 100%, 50%, 0.2) 0%,
+    rgba(255, 255, 255, 0.2) 40%,
+    rgba(255, 255, 255, 0.2) 60%,
+    hsla(317, 88%, 87%, 0.2) 100%
+  );
+  padding-bottom: 5rem;
+}
+
+.profile-sidebar__content::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+.profile-sidebar__close {
+  background: none;
+  border: none;
+  align-self: flex-start;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.75rem;
+  margin: 1.25rem;
+}
+
+.profile-sidebar__close:hover {
+  background-color: #f0f0f0;
+  border-radius: 50%;
+}
+
+.profile-sidebar__close img {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.profile__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  position: relative;
+  padding: 1.5rem 1.25rem;
+}
+
+.profile-sidebar__navs {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
+  border-top: 1px dashed #d3d3d3;
+  border-bottom: 1px dashed #d3d3d3;
+  padding: 1.5rem 1.25rem;
+}
+
+.profile-sidebar__discounts {
+  padding: 1.5rem 1.25rem;
+  width: 100%;
+}
+
+.profile-sidebar__logout {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem;
+  height: 5rem;
+  bottom: 0;
+  background-color: white;
+  width: 100%;
+  background: linear-gradient(
+    to bottom left,
+    white 0%,
+    hsla(317, 88%, 87%, 0.2) 50%
+  );
+}

@@ -1,0 +1,63 @@
+
+
+.profile-sidebar__discounts-cover__outline {
+  padding: 0.25rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  background: linear-gradient(to bottom right, #ff7139, #9900ff);
+}
+
+.profile-sidebar__discounts-cover {
+  display: flex;
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, #ff7139ce, #9900ffce);
+  opacity: 0.9;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.profile-sidebar__discounts__text {
+  width: 100%;
+  padding: 1rem;
+}
+
+.profile-sidebar__discounts__text h3 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+}
+
+.profile-sidebar__discounts__text p {
+  font-size: 0.75rem;
+  font-weight: 400;
+  margin: 0.25rem 0 1rem;
+  color: white;
+}
+
+.profile-sidebar__discounts__text button {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 600;
+  background-color: #ffab00;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.profile-sidebar__discounts__img {
+  width: 5rem;
+  height: 5rem;
+  position: absolute;
+  animation: animateRocket 3s linear infinite alternate;
+}
+
+@keyframes animateRocket {
+  0% {
+    transform: translateY(10px); /* starting position */
+  }
+  100% {
+    transform: translateY(30px); /* moves 20px up */
+  }
+}
