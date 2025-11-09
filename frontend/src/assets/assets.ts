@@ -17,7 +17,7 @@ import subscription from "./subscription.svg";
 import security from "./security.svg";
 import rocket from "./rocket.svg";
 import plusSign from "./plus-sign.svg";
-import updownArrow from "./updown-arrow.svg";
+import updownArrow from "./up-down-arrows.svg";
 export const assets = {
   logo,
   downArrow,
