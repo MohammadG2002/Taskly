@@ -1,5 +1,30 @@
 .kanban-page {
   padding: 20px;
-  min-height: calc(100vh - var(--navbar-height));
+  min-height: calc(100vh - (var(--kanban-header-height)+var(--navbar-height)));
   height: fit-content;
+  margin-top: var(--kanban-header-height);
+}
+
+.kanban-header {
+  height: var(--kanban-header-height);
+  display: flex;
+  align-items: center;
+  padding: 0 1.25rem 0 1.5rem;
+  position: fixed;
+  top: var(--navbar-height);
+  left: var(--sidebar-width);
+  right: 0;
+  background-color: var(--background-color);
+  z-index: 1000;
+  background-color: white;
+  color: var(--text-black);
+  font-size: 1.1rem;
+  font-weight: var(--font-bold);
+  justify-content: space-between;
+}
+
+.kanban-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
