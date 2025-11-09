@@ -1,12 +1,50 @@
-import React from "react";
-import "./ResetPassword.css";
+import React from 'react';
+import AuthLayout from '../../../components/AuthLayout/AuthLayout';
+import './ResetPassword.css';
 
-const ResetPassword = () => {
+const ResetPassword: React.FC = () => {
   return (
-    <div>
-      <h2>Reset Password</h2>
-      <p>Password reset form placeholder.</p>
-    </div>
+    <AuthLayout>
+      <div className="reset-password-container">
+        {/* Lock Icon */}
+        <div className="reset-icon">
+          <div className="lock-container">
+            <div className="lock-body"></div>
+            <div className="lock-shackle"></div>
+            <div className="question-circle">?</div>
+          </div>
+        </div>
+
+        <h1 className="reset-title">Forgot your password?</h1>
+        <p className="reset-subtitle">
+          Please enter the email address associated with your account and we'll email you a link to reset your password.
+        </p>
+
+        <form className="reset-form">
+          {/* Email Input */}
+          <div className="form-group">
+            <label className="form-label">Email address</label>
+            <input 
+              type="email" 
+              className="form-input"
+              placeholder="example@gmail.com"
+            />
+          </div>
+
+          {/* Submit Button */}
+          <button type="submit" className="submit-button">
+            Send request
+          </button>
+
+          {/* Return Link */}
+          <div className="return-link">
+            <a href="/auth/sign-in">
+              <span className="arrow">←</span> Return to sign in
+            </a>
+          </div>
+        </form>
+      </div>
+    </AuthLayout>
   );
 };
 
