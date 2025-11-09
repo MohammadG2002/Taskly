@@ -34,7 +34,13 @@ const WorkspaceItem = ({
         className="workspace-logo"
       />
       <h2 className="workspace-name">{workspace.name}</h2>
-      <span className="workspace-access">{workspace.access}</span>
+      <span
+        className={`workspace-access ${
+          workspace.access === "Pro" ? "pro" : ""
+        }`}
+      >
+        {workspace.access}
+      </span>
     </div>
   );
 };
