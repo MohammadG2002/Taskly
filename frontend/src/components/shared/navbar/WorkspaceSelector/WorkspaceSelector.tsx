@@ -16,7 +16,13 @@ const WorkspaceSelector = () => {
           className="workspace-logo"
         />
         <h2 className="workspace-name">{currentWorkspace.name}</h2>
-        <span className="workspace-access">{currentWorkspace.access}</span>
+        <span
+          className={`workspace-access ${
+            currentWorkspace.access === "Pro" ? "pro" : ""
+          }`}
+        >
+          {currentWorkspace.access}
+        </span>
         <img src={assets.updownArrow} alt="⇕" className="workspace-arrow" />
       </div>
 

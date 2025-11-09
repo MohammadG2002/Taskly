@@ -11,13 +11,13 @@
     "name": "Team 2",
     "logo": "/workspace-logos/ws2.webp",
     "alt": "Team 2",
-    "access": "Premium"
+    "access": "Pro"
   },
   {
     "id": "3",
     "name": "Team 3",
     "logo": "/workspace-logos/ws3.webp",
     "alt": "Team 3",
-    "access": "Free"
+    "access": "Pro"
   }
 ]
