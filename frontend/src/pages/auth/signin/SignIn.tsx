@@ -1,16 +1,66 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./SignIn.css";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../../context/AuthContext';
+import AuthLayout from '../../../components/AuthLayout/AuthLayout';
+import './SignIn.css';
+import FormSignIn from './FormSignIn';
 
-const SignIn = () => {
+const SignIn: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState('');
+
+  // Hardcoded credentials
+  const VALID_EMAIL = 'demo@minimals.cc';
+  const VALID_PASSWORD = '@2Minimal';
+
+  const { login } = useAuth();
+  const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setError('');
+
+    // Check credentials
+    if (email === VALID_EMAIL && password === VALID_PASSWORD) {
+      // Success - set auth and navigate using router (SPA navigation)
+      login();
+      navigate('/kanban', { replace: true });
+    } else {
+      // Show error
+      setError('Invalid email or password');
+    }
+  };
+
   return (
-    <div>
-      <h2>Sign In</h2>
-      <p>Sign in form placeholder.</p>
-      <p>
-        Don't have an account? <Link to="/auth/sign-up">Sign up</Link>
-      </p>
-    </div>
+    <AuthLayout>
+      <div className="signin-container">
+        <h1 className="signin-title">Sign in to your account</h1>
+        <p className="signin-subtitle">
+          Don't have an account? <a href="/auth/sign-up" className="signup-link">Get started</a>
+        </p>
+
+        {/* Demo credentials info */}
+        <div className="demo-info">
+          <div className="info-icon">ℹ️</div>
+          <div className="info-text">
+            Use <strong>demo@minimals.cc</strong> with password <strong>@2Minimal</strong>
+          </div>
+        </div>
+
+        <FormSignIn
+          email={email}
+          password={password}
+          showPassword={showPassword}
+          error={error}
+          onEmailChange={setEmail}
+          onPasswordChange={setPassword}
+          onToggleShow={() => setShowPassword((v) => !v)}
+          onSubmit={handleSubmit}
+        />
+      </div>
+    </AuthLayout>
   );
 };
 
