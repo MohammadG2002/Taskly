@@ -12,8 +12,8 @@
   box-sizing: border-box;
   width: 100%;
   height: fit-content;
-  min-height: 4rem;
-  padding: 0 1.5rem;
+  max-height: 4rem;
+  padding: 1rem 1.5rem;
 
   color: black;
   background-color: rgba(255, 255, 255, 0.575);
