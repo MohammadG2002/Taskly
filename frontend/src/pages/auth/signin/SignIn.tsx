@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'; //  added Link
 import { useAuth } from '../../../context/AuthContext';
 import AuthLayout from '../../../components/AuthLayout/AuthLayout';
 import './SignIn.css';
@@ -22,13 +22,10 @@ const SignIn: React.FC = () => {
     e.preventDefault();
     setError('');
 
-    // Check credentials
     if (email === VALID_EMAIL && password === VALID_PASSWORD) {
-      // Success - set auth and navigate using router (SPA navigation)
       login();
       navigate('/kanban', { replace: true });
     } else {
-      // Show error
       setError('Invalid email or password');
     }
   };
@@ -38,10 +35,12 @@ const SignIn: React.FC = () => {
       <div className="signin-container">
         <h1 className="signin-title">Sign in to your account</h1>
         <p className="signin-subtitle">
-          Don't have an account? <a href="/auth/sign-up" className="signup-link">Get started</a>
+          Don't have an account?{' '}
+          <Link to="/auth/sign-up" className="signup-link"> 
+            Get started
+          </Link>
         </p>
 
-        {/* Demo credentials info */}
         <div className="demo-info">
           <div className="info-icon">ℹ️</div>
           <div className="info-text">
