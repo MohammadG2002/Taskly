@@ -1,9 +1,4 @@
-import React, {
-  createContext,
-  useContext,
-  useState,
-  type ReactNode,
-} from "react";
+import { createContext, useContext, useState, type ReactNode } from "react";
 
 interface AuthContextType {
   currentAuth: boolean;
@@ -15,7 +10,8 @@ interface AuthContextType {
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
-  const [currentAuth, setCurrentAuth] = useState(true);
+  // default to not authenticated so sign-in shows for new sessions
+  const [currentAuth, setCurrentAuth] = useState(false);
 
   const toggleAuth = () => setCurrentAuth((prev) => !prev);
   const login = () => setCurrentAuth(true);
