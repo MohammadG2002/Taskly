@@ -12,7 +12,7 @@
   box-sizing: border-box;
   width: 100%;
   height: fit-content;
-  max-height: 4rem;
+  min-height: var(--navbar-height);
   padding: 1rem 1.5rem;
 
   color: black;

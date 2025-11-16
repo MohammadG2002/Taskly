@@ -3,6 +3,7 @@
   background-color: #fff;
   padding: 10px;
   margin-bottom: 7px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .react-kanban-card-skeleton,
@@ -90,4 +91,57 @@
   transition: 0.3s;
   cursor: pointer;
   background-color: #ccc;
+}
+
+.kanban-card-image {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.kanban-card-priority-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.kanban-card-priority {
+  width: 1rem;
+  height: 1rem;
+}
+
+.kanban-card-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.kanban-card-other {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  justify-content: flex-start;
+}
+
+.kanban-card-other img {
+  width: 1rem;
+  height: 1rem;
+}
+
+.kanban-card-other span {
+  font-size: 0.8rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.kanban-card-attachments,
+.kanban-card-comments {
+  display: flex;
+  gap: 0.1rem;
+  align-items: center;
+  min-width: 1.5rem;
+}
+
+.kanban-card-other .kanban-card-assignees {
+  display: flex;
+  gap: 0.3rem;
 }

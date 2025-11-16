@@ -21,6 +21,7 @@ const ColumnAdder = ({
           className="kanban-new-column-input"
           onKeyDown={(e) => {
             if (e.key === "Enter") {
+              if (!e.currentTarget.value.trim()) return setAddingColumn(false);
               addColumn({
                 id: Date.now(),
                 title: e.currentTarget.value,

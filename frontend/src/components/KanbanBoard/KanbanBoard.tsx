@@ -14,7 +14,9 @@ const KanbanBoard = () => {
     <UncontrolledBoard
       initialBoard={initialBoard}
       allowRenameColumn={true}
-      renderColumnHeader={(column) => <ColumnHeader column={column} />}
+      renderColumnHeader={(column, bag) => (
+        <ColumnHeader column={{ ...column, id: Number(column.id) }} bag={bag} />
+      )}
       allowAddColumn={true}
       renderColumnAdder={({ addColumn }) => (
         <ColumnAdder
@@ -27,9 +29,6 @@ const KanbanBoard = () => {
         <KanbanCard card={card} setSelectedCard={setSelectedCard} />
       )}
       allowAddCard={true}
-      onCardNew={({ card, column }) => {
-        console.log("New card added:", card, "to column:", column);
-      }}
     />
   );
 };

@@ -3,6 +3,7 @@ import users from "./users.json";
 const kanbanCards = {
   1: [
     {
+      columnId: 1,
       id: 1,
       title: "Add card",
       reporter: users[0].name,
@@ -11,11 +12,12 @@ const kanbanCards = {
       priority: "medium",
       description: "Add capability to add a card in a column",
       attachments: ["/attachments/cover-12.webp", "/attachments/cover-14.webp"],
-      assignees: [users[1].name, users[2].name],
+      assignees: [users[1], users[2]],
       subtasks: [1],
       comments: [1],
     },
     {
+      columnId: 1,
       id: 2,
       title: "Design Homepage",
       reporter: users[1].name,
@@ -24,13 +26,14 @@ const kanbanCards = {
       priority: "high",
       description: "Create wireframes and mockups for the homepage",
       attachments: ["/attachments/cover-13.webp"],
-      assignees: [users[0].name],
+      assignees: [users[0]],
       subtasks: [2],
       comments: [2],
     },
   ],
   2: [
     {
+      columnId: 2,
       id: 3,
       title: "Implement Authentication",
       reporter: users[2].name,
@@ -46,6 +49,7 @@ const kanbanCards = {
   ],
   3: [
     {
+      columnId: 3,
       id: 4,
       title: "Testing Payment Gateway",
       reporter: users[0].name,
@@ -54,11 +58,12 @@ const kanbanCards = {
       priority: "medium",
       description: "Test the integration of the payment gateway",
       attachments: ["/attachments/cover-15.webp"],
-      assignees: [users[1].name],
+      assignees: [users[1]],
       subtasks: [],
       comments: [],
     },
     {
+      columnId: 3,
       id: 5,
       title: "Code Review for New Features",
       reporter: users[1].name,
@@ -67,11 +72,12 @@ const kanbanCards = {
       priority: "low",
       description: "Review code for the newly implemented features",
       attachments: [],
-      assignees: [users[2].name],
+      assignees: [users[2]],
       subtasks: [],
       comments: [],
     },
     {
+      columnId: 3,
       id: 6,
       title: "Deploy to Staging",
       reporter: users[2].name,
@@ -81,13 +87,14 @@ const kanbanCards = {
       description:
         "Deploy the latest build to the staging environment for final testing",
       attachments: [],
-      assignees: [users[0].name, users[1].name],
+      assignees: [users[0], users[1]],
       subtasks: [],
       comments: [],
     },
   ],
   4: [
     {
+      columnId: 4,
       id: 7,
       title: "Finalize Project Documentation",
       reporter: users[0].name,
@@ -96,7 +103,7 @@ const kanbanCards = {
       priority: "medium",
       description: "Complete and review all project documentation",
       attachments: [],
-      assignees: [users[0].name],
+      assignees: [users[0], users[2]],
       subtasks: [],
       comments: [],
     },
