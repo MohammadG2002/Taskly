@@ -10,6 +10,7 @@
   font-weight: var(--font-regular);
 }
 
+html,
 body {
   background-color: white;
   width: 100%;
@@ -24,13 +25,15 @@ body {
   --font-regular: 400;
   --font-medium: 500;
   --font-semi-bold: 600;
-  --font-bold: 700; 
+  --font-bold: 700;
   --font-extra-bold: 800;
   --font-black: 900;
 
   --sidebar-width: 18.75rem;
   --sidebar-collapsed-width: 5.5rem;
-  --navbar-height: 3.75rem;
+  --navbar-height: 5rem;
+  --kanban-header-height: 4rem;
+  --text-black: #1c252e;
 
   --font-red-color: #b71d18;
   --bg-red-color: #ff563029;

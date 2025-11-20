@@ -1,13 +1,20 @@
 import React from "react";
+import "@caldwell619/react-kanban/dist/styles.css";
 import "./Kanban.css";
+import KanbanBoard from "../../components/KanbanBoard/KanbanBoard";
 
-const Kanban = () => {
+const KanbanPage = () => {
   return (
-    <div className="kanban-page">
-      <h2>Kanban</h2>
-      <p>This is the Kanban board placeholder page.</p>
-    </div>
+    <>
+      <header className="kanban-header">
+        <h1 className="kanban-title">Kanban</h1>
+      </header>
+
+      <main className="kanban-content">
+        <KanbanBoard />
+      </main>
+    </>
   );
 };
 
-export default Kanban;
+export default KanbanPage;
