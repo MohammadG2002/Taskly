@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, type Dispatch, type SetStateAction } from "react";
 import { assets } from "../../../assets/assets";
 import "./KanbanCard.css";
 
@@ -16,12 +16,12 @@ interface KanbanCardProps {
     comments?: string[];
     assignees?: User[];
   };
-  setSelectedCard: (card: object) => void;
+  onClick?: () => void;
 }
 
-const KanbanCard = ({ card, setSelectedCard }: KanbanCardProps) => {
+const KanbanCard = ({ card, onClick }: KanbanCardProps) => {
   return (
-    <div className="react-kanban-card" onClick={() => setSelectedCard(card)}>
+    <div className="react-kanban-card" onClick={onClick}>
       {card.attachments && card.attachments[0] && (
         <img
           src={card.attachments[0]}
