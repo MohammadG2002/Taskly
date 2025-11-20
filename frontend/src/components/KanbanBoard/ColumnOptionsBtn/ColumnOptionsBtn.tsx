@@ -3,7 +3,6 @@ import { assets } from "../../../assets/assets";
 import type { ColumnHeaderProps } from "../ColumnHeader/ColumnHeader";
 import "./ColumnOptionsBtn.css";
 import useClickOutside from "../../../hooks/useClickOutside";
-import { addColumn } from "@caldwell619/react-kanban";
 
 interface ColumnOptionsBtnProps extends ColumnHeaderProps {
   setIsEditable: Dispatch<SetStateAction<boolean>>;

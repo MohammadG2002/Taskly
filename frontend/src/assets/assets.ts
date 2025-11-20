@@ -27,6 +27,7 @@ import medium from "./medium.svg";
 import low from "./low.svg";
 import attachment from "./attachment.svg";
 import comment from "./comment.svg";
+import sixDots from "./six-dots.svg";
 
 export const assets = {
   logo,
@@ -58,4 +59,5 @@ export const assets = {
   low,
   attachment,
   comment,
+  sixDots,
 };

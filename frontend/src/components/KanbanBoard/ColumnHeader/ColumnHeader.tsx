@@ -6,6 +6,7 @@ import NewCardBtn from "../NewCardBtn/NewCardBtn";
 import ColumnOptionsBtn from "../ColumnOptionsBtn/ColumnOptionsBtn";
 import ColumnTitle from "../ColumnTitle/ColumnTitle";
 import useClickOutside from "../../../hooks/useClickOutside";
+import { assets } from "../../../assets/assets";
 
 export interface ColumnHeaderBag<TCard> {
   removeColumn: () => void;
@@ -70,6 +71,7 @@ const ColumnHeader = ({ column, bag }: ColumnHeaderProps) => {
             setIsEditable={setIsEditable}
           />
         </div>
+        <img src={assets.sixDots} alt="Options" className="six-dots" />
       </div>
       {newCard && (
         <input
