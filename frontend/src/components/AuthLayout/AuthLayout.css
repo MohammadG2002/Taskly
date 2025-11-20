@@ -1,8 +1,9 @@
 
 .auth-container {
   display: flex;
-  min-height: 100vh;
+  max-height: 100vh;
   background: #f5f7fa;
+
 }
 
 /* Left Section */
@@ -14,6 +15,7 @@
   align-items: center;
   padding: 30px 10px;
   background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+  min-height: 100%;
 }
 
 .auth-header {
