@@ -1,8 +1,12 @@
 import React from "react";
-import "./KanbanCard.css";
 import { assets } from "../../../assets/assets";
+import "./KanbanCard.css";
 
 type AssetKey = keyof typeof assets;
+
+type User = {
+  avatar?: string;
+};
 
 interface KanbanCardProps {
   card: {
@@ -10,7 +14,7 @@ interface KanbanCardProps {
     attachments?: string[];
     priority: string;
     comments?: string[];
-    assignees?: string[];
+    assignees?: User[];
   };
   setSelectedCard: (card: object) => void;
 }
@@ -35,32 +39,40 @@ const KanbanCard = ({ card, setSelectedCard }: KanbanCardProps) => {
       </div>
 
       <h2 className="kanban-card-title">{card.title}</h2>
-      <div className="kanban-card-other">
-        {card.attachments && card.attachments.length > 0 && (
-          <div className="kanban-card-attachments">
-            <img src={assets.attachment} alt="Attachments" />
-            <span>{card.attachments.length}</span>
-          </div>
-        )}
-        {card.comments && card.comments.length > 0 && (
-          <div className="kanban-card-comments">
-            <img src={assets.comment} alt="Comments" />
-            <span>{card.comments.length}</span>
-          </div>
-        )}
-        {card.assignees && card.assignees.length > 0 && (
-          <div className="kanban-card-assignees">
-            {card.assignees.slice(0, 3).map((assignee, index) => (
-              <img key={index} src={assignee} />
-            ))}
-            {card.assignees.length > 3 && (
-              <span className="kanban-card-more-assignees">
-                +{card.assignees.length - 3}
-              </span>
-            )}
-          </div>
-        )}
-      </div>
+      {((card.attachments?.length ?? 0) > 0 ||
+        (card.comments?.length ?? 0) > 0 ||
+        (card.assignees?.length ?? 0) > 0) && (
+        <div className="kanban-card-other">
+          {card.attachments && card.attachments.length > 0 && (
+            <div className="kanban-card-attachments">
+              <img src={assets.attachment} alt="Attachments" />
+              <span>{card.attachments.length}</span>
+            </div>
+          )}
+          {card.comments && card.comments.length > 0 && (
+            <div className="kanban-card-comments">
+              <img src={assets.comment} alt="Comments" />
+              <span>{card.comments.length}</span>
+            </div>
+          )}
+          {card.assignees && card.assignees.length > 0 && (
+            <div className="kanban-card-assignees">
+              {card.assignees.slice(0, 3).map((assignee, index) => (
+                <img
+                  key={index}
+                  src={assignee.avatar}
+                  style={{ zIndex: 4 - index }}
+                />
+              ))}
+              {card.assignees.length > 3 && (
+                <span className="kanban-card-more-assignees">
+                  +{card.assignees.length - 3}
+                </span>
+              )}
+            </div>
+          )}
+        </div>
+      )}
     </div>
   );
 };
