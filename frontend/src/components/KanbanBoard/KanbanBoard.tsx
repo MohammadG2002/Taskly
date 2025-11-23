@@ -11,6 +11,7 @@ import KanbanTaskbar from "./KanbanTaskbar/KanbanTaskbar";
 const KanbanBoard = () => {
   const [addingColumn, setAddingColumn] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
+  const [selectedBag, setSelectedBag] = useState({});
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
@@ -31,11 +32,12 @@ const KanbanBoard = () => {
             addColumn={addColumn}
           />
         )}
-        renderCard={(card) => (
+        renderCard={(card, bag) => (
           <KanbanCard
             card={card}
             onClick={() => {
               setSelectedCard(card);
+              setSelectedBag(bag);
               setIsOpen(true);
             }}
           />
@@ -47,6 +49,7 @@ const KanbanBoard = () => {
         show={isOpen}
         onClose={() => setIsOpen(false)}
         selectedCard={selectedCard}
+        selectedBag={selectedBag}
       />
     </>
   );

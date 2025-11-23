@@ -1,0 +1,92 @@
+.confirm-delete-dialog-backdrop {
+  display: flex;
+  position: fixed !important;
+  z-index: 10001;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.1s ease, background-color 0.3s ease,
+    opacity 0.3s ease;
+  justify-content: center;
+  align-items: center;
+}
+.confirm-delete-dialog-backdrop.open {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.1s ease, background-color 0.3s ease,
+    opacity 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.confirm-delete-dialog {
+  background-color: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 33rem;
+  min-width: 28rem;
+  margin: auto;
+  align-items: flex-start;
+}
+
+.confirm-delete-dialog h2 {
+  padding: 1.5rem 1.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1c252e;
+  width: 100%;
+}
+
+.confirm-delete-dialog .confirm-delete-text {
+  flex: 1 1 auto;
+  padding: 0 1.5rem;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.confirm-delete-dialog .confirm-delete-text strong {
+  font-weight: 600;
+}
+
+.confirm-delete-dialog .dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.confirm-delete-dialog .dialog-actions button {
+  padding: 0.5rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.confirm-delete-dialog .dialog-actions .cancel-button {
+  border: 1px solid #ccc;
+  background-color: white;
+  outline: none;
+  transition: outline 0.3s ease, background-color 0.3s ease;
+}
+
+.confirm-delete-dialog .dialog-actions .cancel-button:hover {
+  outline: 1.5px solid black;
+  background-color: #eeeeee;
+}
+
+.confirm-delete-dialog .dialog-actions .delete-button {
+  background-color: #ff5630;
+  color: white;
+}
+
+.confirm-delete-dialog .dialog-actions .delete-button:hover {
+  background-color: #a33820;
+  box-shadow: 0 4px 16px rgba(224, 67, 69, 0.4);
+}

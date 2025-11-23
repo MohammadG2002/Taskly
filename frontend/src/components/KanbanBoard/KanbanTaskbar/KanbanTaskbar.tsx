@@ -1,16 +1,23 @@
 import React, { useState } from "react";
 import "./KanbanTaskbar.css";
 import KanbanCardStatus from "../KanbanCardStatus/KanbanCardStatus";
-import { assets } from "../../../assets/assets";
+import KanbanCardActions from "../KanbanCardActions/KanbanCardActions";
+import KanbanCardTabs from "../KanbanCardTabs/KanbanCardTabs.tsx";
 
 interface KanbanTaskbarProps {
   show: boolean;
   onClose: () => void;
   selectedCard: Record<string, any>;
+  selectedBag: any;
 }
 
-const KanbanTaskbar = ({ show, onClose, selectedCard }: KanbanTaskbarProps) => {
-  const [liked, setLiked] = useState(false);
+const KanbanTaskbar = ({
+  show,
+  onClose,
+  selectedCard,
+  selectedBag,
+}: KanbanTaskbarProps) => {
+  const [activeTab, setActiveTab] = useState("overview");
   return (
     <div
       className={`kanban-taskbar-backdrop ${show ? "open" : ""}`}
@@ -23,24 +30,17 @@ const KanbanTaskbar = ({ show, onClose, selectedCard }: KanbanTaskbarProps) => {
         <div className="kanban-taskbar-content">
           <div className="kanban-taskbar-header">
             <KanbanCardStatus card={selectedCard} />
-            <div className="action-buttons">
-              <button
-                className={`like-button ${liked ? "liked" : ""}`}
-                onClick={() => setLiked(!liked)}
-              >
-                <img src={`${assets[liked ? "liked" : "like"]}`} alt="Like" />
-              </button>
-              <button
-                className="delete-card-button"
-                onClick={() => selectedCard.delete}
-              >
-                <img src={assets.trash} alt="Delete" />
-              </button>
-              <button className="more-options-button">
-                <img src={assets.threeDots} alt="More Options" />
-              </button>
-            </div>
+            <KanbanCardActions
+              selectedCard={selectedCard}
+              selectedBag={selectedBag}
+              onClose={onClose}
+            />
           </div>
+          <KanbanCardTabs
+            selectedCard={selectedCard}
+            activeTab={activeTab}
+            setActiveTab={setActiveTab}
+          />
         </div>
       </div>
     </div>
