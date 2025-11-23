@@ -1,21 +1,12 @@
-import React, { useState, useRef, type RefObject, useEffect } from "react";
-import handleKeyDown from "../../../utils/handleKeyDown";
+import { useRef } from "react";
+import createColumnTitleKeyDownHandler from "../../../utils/handleColumnTitleKeyDown";
 import useClickOutside from "../../../hooks/useClickOutside";
-
-interface ColumnTitleProps {
-  column: {
-    id: number;
-    title: number | string;
-    cards: any[];
-    [key: string]: any;
-  };
-  containerRef: RefObject<HTMLDivElement>;
-  isEditable?: boolean;
-  setIsEditable: React.Dispatch<React.SetStateAction<boolean>>;
-}
+import type { ColumnTitleProps } from "../../../types/ColumnTitle";
+import "./ColumnTitle.css";
 
 const ColumnTitle = ({
   column,
+  bag,
   containerRef,
   isEditable,
   setIsEditable,
@@ -36,16 +27,12 @@ const ColumnTitle = ({
           defaultValue={column.title}
           autoFocus
           onBlur={() => setIsEditable(false)}
-          onKeyDown={(e) => {
-            handleKeyDown({
-              e,
-              onEnter: () => setIsEditable(false),
-              onEscape: () => setIsEditable(false),
-            });
-            if (e.key === "Enter" && inputRef.current) {
-              column.title = inputRef.current.value;
-            }
-          }}
+          onKeyDown={createColumnTitleKeyDownHandler({
+            column,
+            bag,
+            setIsEditable,
+            inputRef,
+          })}
           ref={inputRef}
         />
       ) : (

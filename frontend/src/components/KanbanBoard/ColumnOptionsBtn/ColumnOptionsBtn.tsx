@@ -1,13 +1,8 @@
-import React, { useState, type Dispatch, type SetStateAction } from "react";
+import { useState } from "react";
 import { assets } from "../../../assets/assets";
-import type { ColumnHeaderProps } from "../ColumnHeader/ColumnHeader";
+import type { ColumnOptionsBtnProps } from "../../../types/ColumnOptionsBtn";
 import "./ColumnOptionsBtn.css";
 import useClickOutside from "../../../hooks/useClickOutside";
-
-interface ColumnOptionsBtnProps extends ColumnHeaderProps {
-  setIsEditable: Dispatch<SetStateAction<boolean>>;
-  containerRef: React.RefObject<HTMLDivElement>;
-}
 
 const ColumnOptionsBtn = ({
   column,
@@ -46,7 +41,7 @@ const ColumnOptionsBtn = ({
             onClick={() => {
               setOptionsVisible(false);
               column.cards.splice(0, column.cards.length);
-              bag.renameColumn(column.title as string);
+              bag.renameColumn(column.title);
             }}
           >
             <img src={assets.eraser} alt="Clear" /> Clear

@@ -1,26 +1,46 @@
-interface CardType {
+import type { BoardColumn } from "../types/BoardColumn";
+import type { BoardCard } from "../types/BoardCard";
+import type { User } from "../types/User";
+import { Priority } from "../types/Priority";
+
+interface HandleCardNewArgs {
   e: React.KeyboardEvent<HTMLInputElement>;
-  column: any;
-  bag: any;
+  column: BoardColumn;
+  bag: {
+    addCard: (card: BoardCard, options?: { on: "top" | "bottom" }) => void;
+  };
   setNewCard: React.Dispatch<React.SetStateAction<boolean>>;
+  reporter?: User;
 }
 
-export default function handleCardNew({
+const handleCardNew = ({
   e,
   column,
   bag,
   setNewCard,
-}: CardType) {
+  reporter,
+}: HandleCardNewArgs) => {
   if (e.key === "Enter") {
-    if (!e.currentTarget.value.trim()) return setNewCard(false);
+    const title = e.currentTarget.value.trim();
+    if (!title) return setNewCard(false);
+    const resolvedReporter: User = reporter ??
+      column.cards[0]?.reporter ?? {
+        id: 0,
+        name: "",
+        username: "",
+        email: "",
+        phone: "",
+        address: { city: "", street: "", zipcode: "" },
+        avatar: "",
+      };
     bag.addCard({
       columnId: column.id,
       id: Date.now(),
-      title: e.currentTarget.value,
-      reporter: "",
+      title,
+      reporter: resolvedReporter,
       labels: [],
       dueDate: "",
-      priority: "low",
+      priority: Priority.Low,
       description: "",
       attachments: [],
       assignees: [],
@@ -29,7 +49,7 @@ export default function handleCardNew({
     });
     setNewCard(false);
   }
-  if (e.key === "Escape") {
-    setNewCard(false);
-  }
-}
+  if (e.key === "Escape") setNewCard(false);
+};
+
+export default handleCardNew;

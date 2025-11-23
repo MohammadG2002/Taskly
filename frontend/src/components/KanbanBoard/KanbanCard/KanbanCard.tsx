@@ -1,22 +1,13 @@
-import React from "react";
 import { assets } from "../../../assets/assets";
+import type { BoardCard } from "../../../types/BoardCard";
+import type { User } from "../../../types/User";
 import "./KanbanCard.css";
 
 type AssetKey = keyof typeof assets;
 
-type User = {
-  avatar?: string;
-};
-
 interface KanbanCardProps {
-  card: {
-    title: string;
-    attachments?: string[];
-    priority: string;
-    comments?: string[];
-    assignees?: User[];
-  };
-  setSelectedCard: (card: object) => void;
+  card: BoardCard;
+  setSelectedCard: (card: BoardCard) => void;
 }
 
 const KanbanCard = ({ card, setSelectedCard }: KanbanCardProps) => {

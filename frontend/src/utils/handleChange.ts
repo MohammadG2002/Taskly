@@ -1,6 +1,6 @@
 import { type ChangeEvent } from "react";
 
-export const handleChange = (
+const handleChange = (
   e: ChangeEvent<HTMLInputElement>,
   setFormData: React.Dispatch<React.SetStateAction<any>>
 ): void => {
@@ -10,3 +10,5 @@ export const handleChange = (
     [name]: value,
   }));
 };
+
+export default handleChange;

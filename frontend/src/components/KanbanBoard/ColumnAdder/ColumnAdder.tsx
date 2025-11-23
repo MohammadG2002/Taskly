@@ -1,12 +1,7 @@
-import React from "react";
 import "./ColumnAdder.css";
-import handleInputFocus from "../../../utils/handleInputFocus";
-
-interface ColumnAdderProps {
-  addingColumn: boolean;
-  setAddingColumn: (value: boolean) => void;
-  addColumn: (column: { id: number; title: string; cards: any[] }) => void;
-}
+import handleColumnAdderKeyDown from "../../../utils/handleColumnAdderKeyDown";
+import prepareColumnAdder from "../../../utils/prepareColumnAdder";
+import type { ColumnAdderProps } from "../../../types/ColumnAdder";
 
 const ColumnAdder = ({
   addingColumn,
@@ -19,28 +14,14 @@ const ColumnAdder = ({
         <input
           type="text"
           className="kanban-new-column-input"
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              if (!e.currentTarget.value.trim()) return setAddingColumn(false);
-              addColumn({
-                id: Date.now(),
-                title: e.currentTarget.value,
-                cards: [],
-              });
-              setAddingColumn(false);
-            }
-            if (e.key === "Escape") {
-              setAddingColumn(false);
-            }
-          }}
+          onKeyDown={(e) =>
+            handleColumnAdderKeyDown(e, addColumn, setAddingColumn)
+          }
         />
       ) : (
         <button
           className="kanban-add-column-button"
-          onClick={() => {
-            setAddingColumn(true);
-            handleInputFocus({ selector: ".kanban-new-column-input" });
-          }}
+          onClick={() => prepareColumnAdder(setAddingColumn)}
         >
           + Add Column
         </button>
