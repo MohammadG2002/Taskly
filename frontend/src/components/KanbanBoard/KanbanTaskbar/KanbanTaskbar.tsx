@@ -3,12 +3,14 @@ import "./KanbanTaskbar.css";
 import KanbanCardStatus from "../KanbanCardStatus/KanbanCardStatus";
 import KanbanCardActions from "../KanbanCardActions/KanbanCardActions";
 import KanbanCardTabs from "../KanbanCardTabs/KanbanCardTabs.tsx";
+import type { BoardCard } from "../../../types/BoardCard";
+import type { ColumnHeaderBag } from "../../../types/ColumnHeaderBag";
 
 interface KanbanTaskbarProps {
   show: boolean;
   onClose: () => void;
-  selectedCard: Record<string, any>;
-  selectedBag: any;
+  selectedCard: BoardCard;
+  selectedBag: ColumnHeaderBag<BoardCard>;
 }
 
 const KanbanTaskbar = ({

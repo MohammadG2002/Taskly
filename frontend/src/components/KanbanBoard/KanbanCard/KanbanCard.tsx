@@ -1,6 +1,5 @@
 import { assets } from "../../../assets/assets";
 import type { BoardCard } from "../../../types/BoardCard";
-import type { User } from "../../../types/User";
 import "./KanbanCard.css";
 
 type AssetKey = keyof typeof assets;
@@ -10,9 +9,9 @@ interface KanbanCardProps {
   setSelectedCard: (card: BoardCard) => void;
 }
 
-const KanbanCard = ({ card, onClick }: KanbanCardProps) => {
+const KanbanCard = ({ card, setSelectedCard }: KanbanCardProps) => {
   return (
-    <div className="react-kanban-card" onClick={onClick}>
+    <div className="react-kanban-card" onClick={() => setSelectedCard(card)}>
       {card.attachments && card.attachments[0] && (
         <img
           src={card.attachments[0]}

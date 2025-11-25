@@ -12,9 +12,7 @@ import type { ColumnHeaderProps } from "../../../types/ColumnHeaderProps";
 const ColumnHeader = ({ column, bag }: ColumnHeaderProps) => {
   const [isEditable, setIsEditable] = useState(false);
   const [newCard, setNewCard] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(
-    null as unknown as HTMLDivElement
-  );
+  const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   useClickOutside<HTMLDivElement>({

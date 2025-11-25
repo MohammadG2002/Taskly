@@ -2,10 +2,12 @@ import React, { useState } from "react";
 import { assets } from "../../../assets/assets";
 import ConfirmDeleteDialog from "../ConfirmDeleteDialog/ConfirmDeleteDialog";
 import "./KanbanCardActions.css";
+import type { BoardCard } from "../../../types/BoardCard";
+import type { ColumnHeaderBag } from "../../../types/ColumnHeaderBag";
 
 interface KanbanCardActionsProps {
-  selectedCard: Record<string, any>;
-  selectedBag: any;
+  selectedCard: BoardCard;
+  selectedBag: ColumnHeaderBag<BoardCard>;
   onClose: () => void;
 }
 

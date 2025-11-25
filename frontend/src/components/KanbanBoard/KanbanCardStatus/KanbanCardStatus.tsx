@@ -3,9 +3,10 @@ import initialBoard from "../../../mocks/initialBoard";
 import "./KanbanCardStatus.css";
 import getCardStatus from "../../../utils/getCardStatus";
 import { assets } from "../../../assets/assets";
+import type { BoardCard } from "../../../types/BoardCard";
 
 interface KanbanCardStatusProps {
-  card: Record<string, any>;
+  card: BoardCard;
 }
 
 const KanbanCardStatus = ({ card }: KanbanCardStatusProps) => {

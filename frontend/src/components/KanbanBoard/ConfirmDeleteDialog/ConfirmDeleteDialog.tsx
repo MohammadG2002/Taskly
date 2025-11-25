@@ -2,10 +2,12 @@ import React, { useEffect } from "react";
 import { createPortal } from "react-dom";
 import handleCardRemove from "../../../utils/handleCardRemove";
 import "./ConfirmDeleteDialog.css";
+import type { BoardCard } from "../../../types/BoardCard";
+import type { ColumnHeaderBag } from "../../../types/ColumnHeaderBag";
 
 interface ConfirmDeleteDialogProps {
-  selectedCard: Record<string, any>;
-  selectedBag: any;
+  selectedCard: BoardCard;
+  selectedBag: ColumnHeaderBag<BoardCard>;
   onClose: () => void;
   setShowConfirmDelete: (value: boolean) => void;
   show: boolean;

@@ -1,7 +1,9 @@
-// Handler to remove card
+import type { BoardCard } from "../types/BoardCard";
+import type { ColumnHeaderBag } from "../types/ColumnHeaderBag";
+import initialBoard from "../mocks/initialBoard";
 
 interface HandleCardRemoveParams {
-  bag: any;
+  bag: ColumnHeaderBag<BoardCard>;
   columnId: number;
   cardId: number;
 }
@@ -11,8 +13,12 @@ export default function handleCardRemove({
   columnId,
   cardId,
 }: HandleCardRemoveParams) {
-  bag.removeCard({
-    columnId: columnId,
-    cardId: cardId,
-  });
+  // Find the column and remove the card from its cards array
+  const column = initialBoard.columns.find((col) => col.id === columnId);
+  if (column) {
+    const cardIndex = column.cards.findIndex((card) => card.id === cardId);
+    if (cardIndex !== -1) {
+      column.cards.splice(cardIndex, 1);
+    }
+  }
 }

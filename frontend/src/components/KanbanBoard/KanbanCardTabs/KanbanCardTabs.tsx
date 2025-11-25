@@ -1,9 +1,10 @@
 import React from "react";
 import kanbanCardTabs from "./kanbanCardTabs";
 import "./KanbanCardTabs.css";
+import type { BoardCard } from "../../../types/BoardCard";
 
 interface KanbanCardTabsProps {
-  selectedCard: Record<string, any>;
+  selectedCard: BoardCard;
   activeTab: string;
   setActiveTab: React.Dispatch<React.SetStateAction<string>>;
 }

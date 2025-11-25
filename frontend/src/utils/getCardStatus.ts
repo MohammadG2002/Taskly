@@ -1,11 +1,7 @@
 import initialBoard from "../mocks/initialBoard";
+import type { BoardCard } from "../types/BoardCard";
 
-interface CardStatus {
-  [key: string]: any;
-  card: Record<string, any>;
-}
-
-const getCardStatus = (card: CardStatus) => {
+const getCardStatus = (card: BoardCard) => {
   const column = initialBoard.columns.find((col) =>
     col.cards.some((c) => c.id === card.id)
   );
