@@ -2,16 +2,12 @@ import React from "react";
 import kanbanCardTabs from "./kanbanCardTabs";
 import "./KanbanCardTabs.css";
 import type { BoardCard } from "../../../types/BoardCard";
+import type { TabType } from "../../../types/TabType";
 
 interface KanbanCardTabsProps {
   selectedCard: BoardCard;
-  activeTab: string;
-  setActiveTab: React.Dispatch<React.SetStateAction<string>>;
-}
-
-interface Tab {
-  id: string;
-  label: string;
+  activeTab: TabType;
+  setActiveTab: React.Dispatch<React.SetStateAction<TabType>>;
 }
 
 const KanbanCardTabs = ({
@@ -27,7 +23,7 @@ const KanbanCardTabs = ({
           className={`kanban-taskbar-tab ${
             activeTab === tab.id ? "active" : ""
           }`}
-          onClick={() => setActiveTab(tab.id)}
+          onClick={() => setActiveTab(tab.id as TabType)}
         >
           {tab.label}{" "}
           {tab.id === "comments" && `(${selectedCard.comments?.length})`}
