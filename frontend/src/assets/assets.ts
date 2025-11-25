@@ -28,6 +28,8 @@ import low from "./low.svg";
 import attachment from "./attachment.svg";
 import comment from "./comment.svg";
 import sixDots from "./six-dots.svg";
+import like from "./like.svg";
+import liked from "./liked.svg";
 
 export const assets = {
   logo,
@@ -60,4 +62,6 @@ export const assets = {
   attachment,
   comment,
   sixDots,
+  like,
+  liked,
 };

@@ -50,12 +50,46 @@ body {
 
   --border-gray: 1px solid #ccc;
   --border-gray-active: #bdbdbd;
+
   /* Kanban component-specific variables */
   --kanban-dashed-border-color: #eee;
   --kanban-add-column-hover-bg: #f0f0f08c;
   --kanban-input-focus-border-color: #999;
   --kanban-counter-text-color: #555;
   --kanban-counter-bg: #4949492a;
+
+  /* Kanban colors */
+  --kanban-column-bg: #f4f6f8;
+  --kanban-card-bg: #fff;
+  --kanban-card-shadow: rgba(0, 0, 0, 0.1);
+  --kanban-card-dragging-shadow: grey;
+  --kanban-scrollbar-thumb: #bdbdbd;
+  --kanban-scrollbar-track: #f5f5f5;
+  --kanban-text-primary: #1c252e;
+  --kanban-text-secondary: #555;
+  --kanban-text-tertiary: #333;
+  --kanban-border-light: #eee;
+  --kanban-border-medium: #ddd;
+  --kanban-border-dark: #ccc;
+  --kanban-bg-hover: #f0f0f08c;
+  --kanban-bg-hover-solid: #f0f0f0;
+  --kanban-bg-hover-dark: #e0e0e0;
+  --kanban-bg-active: #ccc;
+  --kanban-taskbar-bg: rgba(255, 255, 255, 0.7);
+  --kanban-taskbar-shadow-light: rgba(0, 0, 0, 0.082);
+  --kanban-taskbar-shadow-dark: rgba(0, 0, 0, 0.2);
+  --kanban-dialog-bg: #fff;
+  --kanban-dialog-shadow: rgba(0, 0, 0, 0.1);
+  --kanban-dialog-backdrop: rgba(0, 0, 0, 0.4);
+  --kanban-action-hover: #dddddd36;
+  --kanban-like-hover: #0084ff2d;
+  --kanban-delete-bg: #ff5630;
+  --kanban-delete-hover: #a33820;
+  --kanban-delete-shadow: rgba(224, 67, 69, 0.4);
+  --kanban-assignee-more-bg: #91ffff4f;
+  --kanban-status-dropdown-shadow: rgba(0, 0, 0, 0.1);
+  --kanban-tab-bg: #f0f0f0;
+  --kanban-tab-active-shadow: rgba(0, 0, 0, 0.1);
 }
 
 ::-webkit-scrollbar-track {

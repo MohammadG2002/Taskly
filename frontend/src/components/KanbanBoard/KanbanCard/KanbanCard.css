@@ -1,9 +1,9 @@
 .react-kanban-card {
   border-radius: 0.8rem;
-  background-color: #fff;
+  background-color: var(--kanban-card-bg);
   padding: 10px 10px 15px;
   margin-bottom: 7px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 3px var(--kanban-card-shadow);
 }
 
 .react-kanban-card-skeleton,
@@ -15,7 +15,7 @@
 }
 
 .react-kanban-card--dragging {
-  box-shadow: 2px 2px grey;
+  box-shadow: 2px 2px var(--kanban-card-dragging-shadow);
 }
 
 .react-kanban-card__description {
@@ -23,7 +23,7 @@
 }
 
 .react-kanban-card__title {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--kanban-border-light);
   padding-bottom: 5px;
   font-weight: bold;
   display: flex;
@@ -31,7 +31,7 @@
 }
 .react-kanban-card-adder-form {
   border-radius: 3px;
-  background-color: #fff;
+  background-color: var(--kanban-card-bg);
   padding: 10px;
   margin-bottom: 7px;
 }
@@ -46,7 +46,7 @@
   margin-top: 5px;
   background-color: transparent;
   cursor: pointer;
-  border: 1px solid #ccc;
+  border: 1px solid var(--kanban-border-dark);
   transition: 0.3s;
   border-radius: 3px;
   font-size: 20px;
@@ -54,12 +54,12 @@
   font-weight: bold;
 }
 .react-kanban-card-adder-button:hover {
-  background-color: #ccc;
+  background-color: var(--kanban-bg-active);
 }
 
 .react-kanban-card-adder-form__title {
   font-weight: bold;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--kanban-border-light);
   padding-bottom: 5px;
   font-weight: bold;
   display: flex;
@@ -80,7 +80,7 @@
 }
 
 .react-kanban-card-adder-form__button {
-  background-color: #eee;
+  background-color: var(--kanban-border-light);
   border: none;
   padding: 5px;
   width: 45%;
@@ -90,7 +90,7 @@
 .react-kanban-card-adder-form__button:hover {
   transition: 0.3s;
   cursor: pointer;
-  background-color: #ccc;
+  background-color: var(--kanban-bg-active);
 }
 
 .kanban-card-image {
@@ -129,7 +129,7 @@
 
 .kanban-card-other span {
   font-size: 0.8rem;
-  color: #555;
+  color: var(--kanban-text-secondary);
   font-weight: 500;
 }
 
@@ -155,7 +155,7 @@
   border-radius: 50%;
   object-fit: cover;
   margin-left: -0.5rem;
-  border: 2px solid #fff;
+  border: 2px solid var(--kanban-card-bg);
 }
 
 .kanban-card-assignees .kanban-card-more-assignees {
@@ -163,12 +163,12 @@
   color: blue;
   font-weight: 300;
   margin-left: -0.5rem;
-  background-color: #91ffff4f;
+  background-color: var(--kanban-assignee-more-bg);
   width: 1.8rem;
   height: 1.8rem;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #fff;
+  border: 2px solid var(--kanban-card-bg);
 }

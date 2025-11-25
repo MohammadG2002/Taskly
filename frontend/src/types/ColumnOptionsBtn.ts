@@ -4,5 +4,5 @@ import type { RefObject } from "react";
 
 export interface ColumnOptionsBtnProps extends ColumnHeaderProps {
   setIsEditable: Dispatch<SetStateAction<boolean>>;
-  containerRef: RefObject<HTMLDivElement>;
+  containerRef: RefObject<HTMLDivElement | null>;
 }
