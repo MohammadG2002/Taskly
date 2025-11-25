@@ -1,10 +1,16 @@
 import React from "react";
 import "./TaskOverview.css";
+import type { BoardCard } from "../../../types/BoardCard";
+import CardTitle from "./CardTitle/CardTitle";
 
-const TaskOverview = () => {
+interface TaskOverviewProps {
+  selectedCard: BoardCard;
+}
+
+const TaskOverview = ({ selectedCard }: TaskOverviewProps) => {
   return (
     <div>
-      <h2>Task Overview Component</h2>
+      <CardTitle selectedCard={selectedCard} />
     </div>
   );
 };

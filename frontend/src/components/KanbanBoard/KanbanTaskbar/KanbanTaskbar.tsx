@@ -26,7 +26,7 @@ const KanbanTaskbar = ({
   const [activeTab, setActiveTab] = useState<TabType>("overview");
 
   const TabComponents: Record<TabType, React.ReactNode> = {
-    overview: <TaskOverview />,
+    overview: <TaskOverview selectedCard={selectedCard} />,
     subtasks: <TaskSubtasks />,
     comments: <TaskComments />,
   };
