@@ -8,7 +8,7 @@
   height: 2rem;
   background-color: transparent;
   cursor: pointer;
-  border: 1px solid #ccc;
+  border: 1px solid var(--kanban-border-dark);
   border-radius: 50%;
   padding: 0.5rem;
   display: flex;
@@ -18,7 +18,7 @@
 }
 
 .kanban-options-button:hover {
-  background-color: #ccc;
+  background-color: var(--kanban-bg-active);
 }
 
 .kanban-options-button img {
@@ -31,7 +31,7 @@
   top: 2rem;
   right: 0;
   background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--kanban-status-dropdown-shadow);
   border-radius: 0.5rem;
   z-index: 20;
   padding: 0.5rem;
@@ -62,7 +62,7 @@
 }
 
 .kanban-column-options button:hover {
-  background-color: #f0f0f08c;
+  background-color: var(--kanban-bg-hover);
 }
 
 .kanban-column-options button img {

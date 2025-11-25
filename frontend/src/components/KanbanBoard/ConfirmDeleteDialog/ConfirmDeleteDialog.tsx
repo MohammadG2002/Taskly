@@ -38,9 +38,8 @@ const ConfirmDeleteDialog = ({
             className="delete-button"
             onClick={() => {
               handleCardRemove({
-                bag: selectedBag,
                 columnId: selectedCard.columnId,
-                cardId: selectedCard.id,
+                card: selectedCard,
               });
               onClose();
               setShowConfirmDelete(false);

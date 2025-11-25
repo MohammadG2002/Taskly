@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 interface UseClickOutsideParams<T extends HTMLElement> {
-  ref: React.RefObject<T>;
+  ref: React.RefObject<T | null>;
   onClickOutside: () => void;
 }
 

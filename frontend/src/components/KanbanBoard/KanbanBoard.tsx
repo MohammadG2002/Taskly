@@ -10,6 +10,9 @@ import ColumnHeader from "./ColumnHeader/ColumnHeader";
 import KanbanCard from "./KanbanCard/KanbanCard";
 import usePersistentColumnTitles from "../../hooks/usePersistentColumnTitles";
 import KanbanTaskbar from "./KanbanTaskbar/KanbanTaskbar";
+import handleCardRemove from "../../utils/handleCardRemove";
+import handleTaskbarClose from "../../utils/handleTaskbarClose";
+import handleCardSelect from "../../utils/handleCardSelect";
 
 const KanbanBoard = () => {
   const [selectedCard, setSelectedCard] = useState<BoardCard | null>(null);
@@ -29,21 +32,24 @@ const KanbanBoard = () => {
         initialBoard={initialBoard}
         allowRenameColumn={true}
         renderColumnHeader={(column, bag) => {
-          const wrappedBag = {
+          const columnId = Number(column.id);
+          const wrappedBag: ColumnHeaderBag<BoardCard> = {
             ...bag,
             renameColumn: (newTitle: string) => {
               bag.renameColumn(newTitle);
-              persistRename(Number(column.id), newTitle);
+              persistRename(columnId, newTitle);
             },
+            removeCard: (card: BoardCard) =>
+              handleCardRemove({ columnId, card }),
           };
-          columnBagsRef.current.set(Number(column.id), wrappedBag);
+          columnBagsRef.current.set(columnId, wrappedBag);
 
-          const persistedTitle = boardTitles[Number(column.id)] ?? column.title;
+          const persistedTitle = boardTitles[columnId] ?? column.title;
           return (
             <ColumnHeader
               column={{
                 ...column,
-                id: Number(column.id),
+                id: columnId,
                 title: persistedTitle,
               }}
               bag={wrappedBag}
@@ -61,16 +67,15 @@ const KanbanBoard = () => {
         renderCard={(card) => (
           <KanbanCard
             card={card}
-            setSelectedCard={(selectedCard) => {
-              setSelectedCard(selectedCard);
-              const bag = columnBagsRef.current.get(selectedCard.columnId);
-              if (bag) {
-                setSelectedBag(bag);
-                requestAnimationFrame(() => {
-                  setShowTaskbar(true);
-                });
-              }
-            }}
+            setSelectedCard={(selectedCard) =>
+              handleCardSelect({
+                selectedCard,
+                columnBagsRef,
+                setSelectedCard,
+                setSelectedBag,
+                setShowTaskbar,
+              })
+            }
           />
         )}
         allowAddCard={true}
@@ -78,13 +83,13 @@ const KanbanBoard = () => {
       {selectedCard && selectedBag && (
         <KanbanTaskbar
           show={showTaskbar}
-          onClose={() => {
-            setShowTaskbar(false);
-            setTimeout(() => {
-              setSelectedCard(null);
-              setSelectedBag(null);
-            }, 200);
-          }}
+          onClose={() =>
+            handleTaskbarClose({
+              setShowTaskbar,
+              setSelectedCard,
+              setSelectedBag,
+            })
+          }
           selectedCard={selectedCard}
           selectedBag={selectedBag}
         />

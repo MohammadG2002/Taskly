@@ -1,10 +1,10 @@
 .kanban-card-status {
   font-size: 0.7rem;
   font-weight: 700;
-  color: #333;
+  color: var(--kanban-text-tertiary);
   cursor: pointer;
   padding: 0.5rem 0.8rem;
-  background-color: #f0f0f08c;
+  background-color: var(--kanban-bg-hover);
   border-radius: 0.5rem;
   position: relative;
 }
@@ -34,7 +34,7 @@
   );
   backdrop-filter: blur(6px);
   min-width: 8rem;
-  border: 1px solid #ddd;
+  border: 1px solid var(--kanban-border-medium);
   visibility: hidden;
   height: 0;
   opacity: 0;
@@ -60,5 +60,5 @@
 }
 
 .kanban-card-status-option:hover {
-  background-color: #f0f0f0;
+  background-color: var(--kanban-bg-hover-solid);
 }

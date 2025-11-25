@@ -6,7 +6,7 @@ import type { ColumnHeaderBag } from "./ColumnHeaderBag";
 export interface ColumnTitleProps {
   column: BoardColumn;
   bag: ColumnHeaderBag<BoardCard>;
-  containerRef: RefObject<HTMLDivElement>;
+  containerRef: RefObject<HTMLDivElement | null>;
   isEditable?: boolean;
   setIsEditable: React.Dispatch<React.SetStateAction<boolean>>;
 }

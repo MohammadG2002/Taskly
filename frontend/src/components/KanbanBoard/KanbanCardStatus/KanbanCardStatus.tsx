@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import initialBoard from "../../../mocks/initialBoard";
 import "./KanbanCardStatus.css";
 import getCardStatus from "../../../utils/getCardStatus";
 import { assets } from "../../../assets/assets";
+import useClickOutside from "../../../hooks/useClickOutside";
 import type { BoardCard } from "../../../types/BoardCard";
 
 interface KanbanCardStatusProps {
@@ -13,6 +14,12 @@ const KanbanCardStatus = ({ card }: KanbanCardStatusProps) => {
   const status = getCardStatus(card);
   const [currentStatus, setCurrentStatus] = useState(status);
   const [showDropdown, setShowDropdown] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useClickOutside<HTMLDivElement>({
+    ref: dropdownRef,
+    onClickOutside: () => setShowDropdown(false),
+  });
 
   useEffect(() => {
     setCurrentStatus(status);
@@ -22,6 +29,7 @@ const KanbanCardStatus = ({ card }: KanbanCardStatusProps) => {
     <div
       className="kanban-card-status"
       onClick={() => setShowDropdown(!showDropdown)}
+      ref={dropdownRef}
     >
       {currentStatus} <img src={assets.downArrow} alt="Dropdown" />
       <div

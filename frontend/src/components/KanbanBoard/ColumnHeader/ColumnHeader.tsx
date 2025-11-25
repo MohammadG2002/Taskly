@@ -21,7 +21,7 @@ const ColumnHeader = ({ column, bag }: ColumnHeaderProps) => {
   });
 
   return (
-    <div className="kanban-column-header-conainer" ref={containerRef}>
+    <div className="kanban-column-header-container" ref={containerRef}>
       <div className="kanban-column-header">
         <span className="kanban-column-counter">{column.cards.length}</span>
         <ColumnTitle
@@ -45,6 +45,7 @@ const ColumnHeader = ({ column, bag }: ColumnHeaderProps) => {
       {newCard && (
         <input
           type="text"
+          placeholder="Enter card title..."
           className="kanban-new-card-input"
           onKeyDown={createNewCardKeyDownHandler({ column, bag, setNewCard })}
           autoFocus
