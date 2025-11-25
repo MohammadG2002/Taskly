@@ -14,4 +14,5 @@ const handleKeyDown = ({ e, onEnter, onEscape }: HandleKeyDownParams) => {
     onEscape();
   }
 };
+
 export default handleKeyDown;

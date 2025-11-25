@@ -38,6 +38,24 @@ body {
   --font-red-color: #b71d18;
   --bg-red-color: #ff563029;
   --bg-red-hover-color: #ff56304d;
+
+  --border: 1px solid #ccc;
+  --border-color: #ccc;
+
+  --white-active: #e6e6e6;
+
+  --bg-gray: #f0f0f0;
+  --bg-gray-hover: #e0e0e0;
+  --bg-white-active: #ccc;
+
+  --border-gray: 1px solid #ccc;
+  --border-gray-active: #bdbdbd;
+  /* Kanban component-specific variables */
+  --kanban-dashed-border-color: #eee;
+  --kanban-add-column-hover-bg: #f0f0f08c;
+  --kanban-input-focus-border-color: #999;
+  --kanban-counter-text-color: #555;
+  --kanban-counter-bg: #4949492a;
 }
 
 ::-webkit-scrollbar-track {
