@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { handleChange } from "../../../utils/handleChange";
-import { handleSubmit } from "../../../utils/handleSubmit";
-import"./SignUp.css";
+import { useState } from "react";
+import handleChange from "../../../utils/handleChange";
+import handleSubmit from "../../../utils/handleSubmit";
+import "./SignUp.css";
 interface SignUpFormData {
   firstName: string;
   lastName: string;

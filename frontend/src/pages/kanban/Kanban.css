@@ -1,5 +1,48 @@
 .kanban-page {
   padding: 20px;
-  min-height: calc(100vh - var(--navbar-height));
+  max-height: calc(
+    100vh - (var(--kanban-header-height) + var(--navbar-height))
+  );
   height: fit-content;
+  margin-top: var(--kanban-header-height);
+  overflow: hidden;
+}
+
+.kanban-header {
+  min-height: var(--kanban-header-height);
+  display: flex;
+  align-items: center;
+  padding: 0 1.25rem 0 1.5rem;
+  position: fixed;
+  top: var(--navbar-height);
+  left: auto;
+  background-color: var(--background-color);
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--text-black);
+  font-size: 1.1rem;
+  font-weight: var(--font-bold);
+  justify-content: space-between;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.kanban-header.expanded {
+  left: var(--sidebar-collapsed-width);
+}
+
+.kanban-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.kanban-content {
+  position: relative;
+  width: fit-content;
+  height: calc(
+    100vh - (var(--navbar-height) + var(--kanban-header-height) + 1rem)
+  );
+  overflow-x: scroll;
+  margin-top: var(--kanban-header-height);
 }

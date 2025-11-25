@@ -1,0 +1,28 @@
+{
+  "1": [
+    {
+      "id": 1,
+      "text": "Design the user interface",
+      "checked": false
+    },
+    {
+      "id": 4,
+      "text": "Create wireframes",
+      "checked": true
+    }
+  ],
+  "2": [
+    {
+      "id": 2,
+      "text": "Set up the database",
+      "checked": true
+    }
+  ],
+  "3": [
+    {
+      "id": 3,
+      "text": "Implement authentication",
+      "checked": false
+    }
+  ]
+}

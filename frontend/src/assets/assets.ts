@@ -18,6 +18,17 @@ import security from "./security.svg";
 import rocket from "./rocket.svg";
 import plusSign from "./plus-sign.svg";
 import updownArrow from "./up-down-arrows.svg";
+import threeDots from "./three-dots.svg";
+import pencil from "./pencil.svg";
+import eraser from "./eraser.svg";
+import trash from "./trash.svg";
+import high from "./high.svg";
+import medium from "./medium.svg";
+import low from "./low.svg";
+import attachment from "./attachment.svg";
+import comment from "./comment.svg";
+import sixDots from "./six-dots.svg";
+
 export const assets = {
   logo,
   downArrow,
@@ -39,4 +50,14 @@ export const assets = {
   rocket,
   plusSign,
   updownArrow,
+  threeDots,
+  pencil,
+  eraser,
+  trash,
+  high,
+  medium,
+  low,
+  attachment,
+  comment,
+  sixDots,
 };
