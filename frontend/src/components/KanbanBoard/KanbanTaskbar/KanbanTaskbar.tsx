@@ -5,6 +5,9 @@ import KanbanCardActions from "../KanbanCardActions/KanbanCardActions";
 import KanbanCardTabs from "../KanbanCardTabs/KanbanCardTabs.tsx";
 import type { BoardCard } from "../../../types/BoardCard";
 import type { ColumnHeaderBag } from "../../../types/ColumnHeaderBag";
+import TaskOverview from "../TaskOverview/TaskOverview.tsx";
+import TaskSubtasks from "../TaskSubtasks/TaskSubtasks.tsx";
+import TaskComments from "../TaskComments/TaskComments.tsx";
 
 interface KanbanTaskbarProps {
   show: boolean;
@@ -43,6 +46,11 @@ const KanbanTaskbar = ({
             activeTab={activeTab}
             setActiveTab={setActiveTab}
           />
+          <div className="kanban-taskbar-body">
+            {activeTab === "overview" && <TaskOverview />}
+            {activeTab === "subtasks" && <TaskSubtasks />}
+            {activeTab === "comments" && <TaskComments />}
+          </div>
         </div>
       </div>
     </div>
