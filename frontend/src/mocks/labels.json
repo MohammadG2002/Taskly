@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Bug",
+    "color": "#ffffff",
+    "bgColor": "#FF5733"
+  },
+  {
+    "id": 2,
+    "name": "Feature",
+    "color": "#ffffff",
+    "bgColor": "#33FF57"
+  },
+  {
+    "id": 3,
+    "name": "Improvement",
+    "color": "#ffffff",
+    "bgColor": "#3357FF"
+  },
+  {
+    "id": 4,
+    "name": "Documentation",
+    "color": "#ffffff",
+    "bgColor": "#F1C40F"
+  },
+  {
+    "id": 5,
+    "name": "Research",
+    "color": "#ffffff",
+    "bgColor": "#8E44AD"
+  }
+]

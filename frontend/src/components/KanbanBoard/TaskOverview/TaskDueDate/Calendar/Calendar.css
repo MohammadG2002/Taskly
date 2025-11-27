@@ -1,0 +1,24 @@
+.calendar-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--kanban-dialog-backdrop);
+  z-index: 10000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s ease, opacity 0.2s ease;
+}
+.calendar-backdrop.open {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.2s ease, opacity 0.2s ease;
+}
+
+.calendar-container {
+  background-color: var(--kanban-dialog-bg);
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px var(--kanban-dialog-shadow);
+  padding: 1rem;
+}

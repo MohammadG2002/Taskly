@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./CardTitle.css";
 import type { BoardCard } from "../../../../types/BoardCard";
-import handleCardChange from "../../../../utils/handleCardChange";
+import handleCardRename from "../../../../utils/handleCardRename";
 
 interface CardTitleProps {
   selectedCard: BoardCard;
@@ -9,6 +9,7 @@ interface CardTitleProps {
 
 const CardTitle = ({ selectedCard }: CardTitleProps) => {
   const [isEditable, setIsEditable] = useState(false);
+  const [newTitle, setNewTitle] = useState(selectedCard.title);
   useEffect(() => {
     setIsEditable(false);
   }, [selectedCard]);
@@ -17,27 +18,23 @@ const CardTitle = ({ selectedCard }: CardTitleProps) => {
       {isEditable ? (
         <input
           type="text"
-          className="kanban-card-title-input"
-          defaultValue={selectedCard.title}
+          value={newTitle}
+          placeholder="Enter a new card name"
+          onChange={(e) => setNewTitle(e.target.value)}
+          onKeyDown={handleCardRename({
+            selectedCard,
+            newTitle,
+            onClose: () => setIsEditable(false),
+          })}
+          onBlur={handleCardRename({
+            selectedCard,
+            newTitle,
+            onClose: () => setIsEditable(false),
+          })}
           autoFocus
-          onBlur={() => setIsEditable(false)}
-          onKeyDown={(e) => {
-            if (e.key === "Enter") {
-              const next = (e.target as HTMLInputElement).value.trim();
-              if (next && next !== selectedCard.title) {
-                handleCardChange({
-                  cardId: selectedCard.id,
-                  updates: { title: next },
-                });
-              }
-              setIsEditable(false);
-            } else if (e.key === "Escape") {
-              setIsEditable(false);
-            }
-          }}
         />
       ) : (
-        <div onClick={() => setIsEditable(true)}>{selectedCard.title}</div>
+        <h2 onClick={() => setIsEditable(true)}>{selectedCard.title}</h2>
       )}
     </>
   );

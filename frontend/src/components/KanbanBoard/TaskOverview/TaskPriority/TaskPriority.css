@@ -1,0 +1,10 @@
+.task-priority-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.task-priority-button.active {
+  font-weight: bold;
+  background-color: red;
+}
