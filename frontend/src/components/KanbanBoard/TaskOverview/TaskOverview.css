@@ -9,6 +9,7 @@
   display: flex;
   gap: 0.5rem;
   align-items: center;
+  min-height: 2.5rem;
 }
 
 h4 {
@@ -18,6 +19,8 @@ h4 {
   color: var(--kanban-text-primary);
   min-width: 6rem;
   overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 img {

@@ -10,6 +10,10 @@ const formatDateRange = (start: Date, end: Date) => {
   const startYear = start.getFullYear();
   const endYear = end.getFullYear();
 
+  if (end.getTime() - start.getTime() < 0) {
+    return "Invalid";
+  }
+
   if (startMonth === endMonth && startYear === endYear) {
     // 27 - 29 Nov 2025
     return `${startDay} - ${endDay} ${startMonth} ${startYear}`;

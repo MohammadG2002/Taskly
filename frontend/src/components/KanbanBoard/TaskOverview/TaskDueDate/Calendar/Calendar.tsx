@@ -1,9 +1,9 @@
 import React from "react";
-import "./Calendar.css";
 import { createPortal } from "react-dom";
 import DatePicker from "react-datepicker";
 import startDateHandler from "../../../../../utils/date/startDateHandler";
 import dueDateHandler from "../../../../../utils/date/dueDateHandler";
+import "./Calendar.css";
 
 interface CalendarProps {
   startDate: Date;
@@ -35,19 +35,29 @@ const Calendar = ({
       onClick={onClose}
     >
       <div className="calendar-container" onClick={(e) => e.stopPropagation()}>
-        <div>
-          <DatePicker
-            selected={startDate}
-            onChange={handleStartDateChange}
-            inline
-          />
+        <div className="calendars">
+          <div>
+            <DatePicker
+              selected={startDate}
+              onChange={handleStartDateChange}
+              inline
+            />
+          </div>
+          <div>
+            <DatePicker
+              selected={dueDate}
+              onChange={handleDueDateChange}
+              inline
+            />
+          </div>
         </div>
-        <div>
-          <DatePicker
-            selected={dueDate}
-            onChange={handleDueDateChange}
-            inline
-          />
+        <div className="calendar-action-buttons">
+          <button className="calendar-cancel-button" onClick={onClose}>
+            Cancel
+          </button>
+          <button className="calendar-apply-button" onClick={onClose}>
+            Apply
+          </button>
         </div>
       </div>
     </div>,
