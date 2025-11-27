@@ -17,7 +17,6 @@ const TaskSubtasks = ({ selectedCard }: Props) => {
   const cardKey = String(selectedCard?.id ?? "");
 
   const initial: Subtask[] = useMemo(() => {
-    // Prefer to read subtask ids from the selected card (canonical mapping).
     const data = subtasksJson as Record<string, Subtask[]>;
     const cardSubtaskIds: number[] | undefined = selectedCard?.subtasks;
     if (Array.isArray(cardSubtaskIds) && cardSubtaskIds.length > 0) {
@@ -34,8 +33,6 @@ const TaskSubtasks = ({ selectedCard }: Props) => {
       }
       return result;
     }
-
-    // fallback: try to look up by the card id as a key in the JSON
     const byKey = (subtasksJson as Record<string, Subtask[]>)[cardKey];
     return Array.isArray(byKey) ? byKey : [];
   }, [cardKey, selectedCard?.subtasks]);

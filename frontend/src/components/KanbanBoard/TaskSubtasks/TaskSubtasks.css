@@ -1,8 +1,7 @@
-/* TaskSubtasks styles - simple, neutral styling matching the app's card/taskbar look */
 .task-subtasks-root {
 	padding: 16px;
 	font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-	color: #1f2937; /* slate-800 */
+	color: #1f2937; 
 }
 
 .task-subtasks-header {
@@ -15,20 +14,20 @@
 .task-subtasks-count {
 	font-weight: 600;
 	font-size: 14px;
-	color: #374151; /* slate-700 */
+	color: #374151; 
 }
 
 .task-subtasks-progress {
 	flex: 1;
 	height: 6px;
-	background: #e6e7ea; /* light track */
+	background: #e6e7ea; 
 	border-radius: 6px;
 	overflow: hidden;
 }
 
 .task-subtasks-progress-bar {
 	height: 100%;
-	background: linear-gradient(90deg, #10b981, #06b6d4); /* green to teal */
+	background: linear-gradient(90deg, #10b981, #06b6d4); 
 	border-radius: 6px 0 0 6px;
 	transition: width 180ms ease;
 }
@@ -59,7 +58,7 @@
 	width: 18px;
 	height: 18px;
 	border-radius: 4px;
-	border: 1px solid #cbd5e1; /* slate-300 */
+	border: 1px solid #cbd5e1; 
 	background: white;
 }
 
@@ -71,7 +70,7 @@
 
 .task-subtasks-item span.checked {
 	text-decoration: line-through;
-	color: #6b7280; /* muted */
+	color: #6b7280; 
 }
 
 .task-subtasks-empty {
@@ -96,16 +95,37 @@
 }
 
 .task-subtasks-adder button {
-	padding: 8px 12px;
-	border-radius: 8px;
-	border: none;
-	background: #06b6d4; /* teal */
-	color: white;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 14px;
+	border-radius: 999px;
+	border: 1px solid #e6e7ea;
+	background: #ffffff;
+	color: #0f172a;
 	font-weight: 600;
 	cursor: pointer;
+	box-shadow: 0 1px 2px rgba(16,24,40,0.04);
 }
 
-/* small screens tweaks */
+.task-subtasks-adder button::before {
+	content: "+";
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	line-height: 18px;
+	text-align: center;
+	border-radius: 4px;
+	background: transparent;
+	color: #0f172a;
+	font-weight: 700;
+}
+
+.task-subtasks-adder button:hover {
+	background: #f8fafc;
+	border-color: #d1d5db;
+}
+
 @media (max-width: 520px) {
 	.task-subtasks-root {
 		padding: 12px;
