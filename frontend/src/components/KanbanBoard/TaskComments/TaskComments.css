@@ -1,0 +1,12 @@
+.task-comments-container {
+  max-height: 400px;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+.task-comments-list {
+  min-height: 18rem;
+  max-height: 18rem;
+  overflow-y: auto;
+}

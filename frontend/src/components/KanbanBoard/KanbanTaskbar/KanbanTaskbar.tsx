@@ -28,7 +28,7 @@ const KanbanTaskbar = ({
   const TabComponents: Record<TabType, React.ReactNode> = {
     overview: <TaskOverview />,
     subtasks: <TaskSubtasks />,
-    comments: <TaskComments />,
+    comments: <TaskComments selectedCard={selectedCard} />,
   };
   return (
     <div

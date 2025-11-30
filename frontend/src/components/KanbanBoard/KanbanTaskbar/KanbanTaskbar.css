@@ -17,7 +17,7 @@
   position: fixed;
   top: 0;
   right: 0;
-  width: 20rem;
+  width: 25rem;
   height: 100vh;
   background: white;
   box-shadow: 0px 0px 50px var(--kanban-taskbar-shadow-light);
