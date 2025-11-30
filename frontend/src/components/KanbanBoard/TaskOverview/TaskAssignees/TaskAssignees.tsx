@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./TaskAssignees.css";
 import type { BoardCard } from "../../../../types/BoardCard";
-import { assets } from "../../../../assets/assets";
 import Tooltip from "../../../../utils/Tooltip/Tooltip";
+import AssigneesContacts from "../../AssigneesContacts/AssigneesContacts";
 
 const TaskAssignees = ({ card }: { card: BoardCard }) => {
+  const [showContacts, setShowContacts] = useState(false);
   return (
     <div className="task-assignees-container">
       {card.assignees.map((assignee) => (
@@ -16,8 +17,18 @@ const TaskAssignees = ({ card }: { card: BoardCard }) => {
         />
       ))}
       <Tooltip text="Add Assignee">
-        <div className="add-assignee-container">+</div>
+        <div
+          className="add-assignee-container"
+          onClick={() => setShowContacts(!showContacts)}
+        >
+          +
+        </div>
       </Tooltip>
+      <AssigneesContacts
+        assignees={card.assignees}
+        show={showContacts}
+        onClose={() => setShowContacts(false)}
+      />
     </div>
   );
 };

@@ -1,3 +1,9 @@
+.task-labels-container {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .task-label {
   padding: 0.2rem 0.5rem;
   border-radius: 0.5rem;

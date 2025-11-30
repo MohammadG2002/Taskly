@@ -6,10 +6,12 @@ export const handleAddAttachment = (
 ) => {
   const input = document.createElement("input");
   input.type = "file";
+  input.accept = "image/*";
   input.onchange = (e) => {
     const file = (e.target as HTMLInputElement).files?.[0];
     if (file) {
-      card.attachments.push(file.name);
+      const fileUrl = URL.createObjectURL(file);
+      card.attachments.push(fileUrl);
       forceUpdate();
     }
   };

@@ -1,0 +1,114 @@
+.assignees-contacts-backdrop {
+  display: flex;
+  position: fixed !important;
+  z-index: 10001;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.1s ease, background-color 0.3s ease,
+    opacity 0.3s ease;
+  justify-content: center;
+  align-items: center;
+}
+.assignees-contacts-backdrop.open {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.1s ease, background-color 0.3s ease,
+    opacity 0.3s ease;
+  background-color: var(--kanban-dialog-backdrop);
+}
+.assignees-contacts-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  max-width: 25rem;
+  width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.assignees-contacts-header {
+  padding: 0 0 1.5rem;
+}
+
+.assignees-contacts-header h2 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--kanban-text-primary);
+}
+
+.assignees-contacts-header h2 span {
+  font-weight: 600;
+  color: var(--kanban-text-tertiary);
+}
+
+.assignees-contacts-list {
+  overflow-y: auto;
+  max-height: 50vh;
+}
+
+.assignee-contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 1rem 0;
+}
+
+.assignee-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.assignee-contact-avatar {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.assignee-contact-name {
+  font-size: 1rem;
+  color: var(--kanban-text-primary);
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 10rem;
+}
+
+.assignee-contact button {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  background-color: var(--kanban-button-bg);
+  color: var(--kanban-button-text);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+.assignee-contact button:hover {
+  background-color: var(--kanban-black-hover);
+  color: var(--kanban-black);
+}
+
+.assignee-contact button.assigned {
+  color: var(--kanban-blue);
+}
+.assignee-contact button.assigned:hover {
+  background-color: var(--kanban-blue-hover);
+}
+
+.assignee-contact button img {
+  width: 0.9rem;
+  height: 0.9rem;
+  margin-right: 0.4rem;
+}

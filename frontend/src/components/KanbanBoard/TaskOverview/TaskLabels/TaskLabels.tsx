@@ -4,7 +4,7 @@ import type { BoardCard } from "../../../../types/BoardCard";
 
 const TaskLabels = ({ card }: { card: BoardCard }) => {
   return (
-    <div>
+    <div className="task-labels-container">
       {card.taskLabels?.map((label) => (
         <span
           key={label.id}

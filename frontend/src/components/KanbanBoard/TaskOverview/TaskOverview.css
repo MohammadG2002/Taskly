@@ -21,6 +21,8 @@ h4 {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  line-height: 2.5rem;
+  align-self: flex-start;
 }
 
 img {
