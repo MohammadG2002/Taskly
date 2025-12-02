@@ -31,6 +31,7 @@ import sixDots from "./six-dots.svg";
 import like from "./like.svg";
 import liked from "./liked.svg";
 import attachImg from "./attach-image.svg";
+import upload from "./upload.svg";
 
 export const assets = {
   logo,
@@ -66,4 +67,5 @@ export const assets = {
   like,
   liked,
   attachImg,
+  upload,
 };
