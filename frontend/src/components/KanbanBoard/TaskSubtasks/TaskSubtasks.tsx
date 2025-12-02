@@ -4,12 +4,10 @@ import "./TaskSubtasks.css";
 import {
   getInitialSubtasks,
   type Subtask,
-} from "../../../utils/getInitialSubtasks";
+} from "../../../utils/subtasks/getInitialSubtasks";
 import { getSubtasksProgress } from "../../../utils/getSubtasksProgress";
-import {
-  toggleSubtask,
-  addSubtaskItem,
-} from "../../../utils/subtasksHandlers";
+import { toggleSubtask } from "../../../utils/subtasks/toggleSubtask";
+import { addSubtaskItem } from "../../../utils/subtasks/addSubtaskItem";
 
 interface Props {
   selectedCard: BoardCard;
