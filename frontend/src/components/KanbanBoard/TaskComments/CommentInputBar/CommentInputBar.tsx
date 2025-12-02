@@ -7,7 +7,10 @@ const CommentInputBar = () => {
   return (
     <div className="comment-input-bar-container">
       <div className="user-icon">
-        <img src={currentUser?.avatar} alt="User Avatar" />
+        <img
+          src={currentUser?.avatar || currentUser?.name.charAt(0)}
+          alt="User Avatar"
+        />
       </div>
       <div className="comment-input-bar">
         <div>

@@ -19,7 +19,7 @@ const AttachmentList = ({
   attachments,
   onClose,
 }: AttachmentListProps) => {
-  if (!attachments || attachments.length === 0) return null;
+  if (!show || !attachments || attachments.length === 0) return null;
 
   const slides = attachments.map((attachment) => ({
     src: attachment,
