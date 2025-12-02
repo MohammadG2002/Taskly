@@ -59,6 +59,12 @@ body {
   --kanban-counter-bg: #4949492a;
 
   /* Kanban colors */
+  --kanban-blue: #007bff;
+  --kanban-blue-hover: rgba(0, 86, 179, 0.1);
+  --kanban-green: #28a745;
+  --kanban-green-hover: rgba(40, 167, 69, 0.1);
+  --kanban-black: #1c252e;
+  --kanban-black-hover: rgba(28, 37, 46, 0.1);
   --kanban-column-bg: #f4f6f8;
   --kanban-card-bg: #fff;
   --kanban-card-shadow: rgba(0, 0, 0, 0.1);
@@ -90,6 +96,11 @@ body {
   --kanban-status-dropdown-shadow: rgba(0, 0, 0, 0.1);
   --kanban-tab-bg: #f0f0f0;
   --kanban-tab-active-shadow: rgba(0, 0, 0, 0.1);
+  --kanban-apply-button-bg: #3d3d3d;
+  --kanban-apply-button-hover: #262626;
+  --kanban-priority-button: 1px solid #ccc;
+  --kanban-priority-button-active: 2px solid #000000;
+  --kanban-input-border-color: #ccc;
 }
 
 ::-webkit-scrollbar-track {

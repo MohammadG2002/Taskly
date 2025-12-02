@@ -13,6 +13,7 @@ import KanbanTaskbar from "./KanbanTaskbar/KanbanTaskbar";
 import handleCardRemove from "../../utils/handleCardRemove";
 import handleTaskbarClose from "../../utils/handleTaskbarClose";
 import handleCardSelect from "../../utils/handleCardSelect";
+import createWrappedBag from "../../utils/createWrappedBag";
 
 const KanbanBoard = () => {
   const [selectedCard, setSelectedCard] = useState<BoardCard | null>(null);
@@ -33,15 +34,7 @@ const KanbanBoard = () => {
         allowRenameColumn={true}
         renderColumnHeader={(column, bag) => {
           const columnId = Number(column.id);
-          const wrappedBag: ColumnHeaderBag<BoardCard> = {
-            ...bag,
-            renameColumn: (newTitle: string) => {
-              bag.renameColumn(newTitle);
-              persistRename(columnId, newTitle);
-            },
-            removeCard: (card: BoardCard) =>
-              handleCardRemove({ columnId, card }),
-          };
+          const wrappedBag = createWrappedBag({ bag, columnId, persistRename });
           columnBagsRef.current.set(columnId, wrappedBag);
 
           const persistedTitle = boardTitles[columnId] ?? column.title;

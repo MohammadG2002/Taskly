@@ -1,0 +1,70 @@
+.task-attachments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.attachment-item {
+  position: relative;
+}
+
+.attachment-item > img,
+.add-attachment-btn {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 0.5rem;
+}
+
+.attachment-item > img {
+  object-fit: cover;
+}
+
+.attachment-item .remove-attachment-btn {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.1rem;
+  background-color: var(--kanban-red);
+  border: none;
+  border-radius: 50%;
+  width: 1.5rem;
+  height: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: var(--kanban-card-bg);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.attachment-item .remove-attachment-btn:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s ease;
+}
+
+.remove-attachment-btn img {
+  width: 0.8rem;
+  height: 0.8rem;
+}
+
+.add-attachment-btn {
+  border: 1px solid var(--kanban-border-dark);
+  background-color: var(--kanban-bg-hover-solid);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.add-attachment-btn img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.add-attachment-btn:hover {
+  transition: background-color 0.2s ease;
+  opacity: 0.8;
+}
