@@ -4,6 +4,8 @@
   padding: 10px 10px 15px;
   margin-bottom: 7px;
   box-shadow: 0 1px 3px var(--kanban-card-shadow);
+  cursor: grab;
+  overflow: hidden;
 }
 
 .react-kanban-card-skeleton,
@@ -28,6 +30,10 @@
   font-weight: bold;
   display: flex;
   justify-content: space-between;
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .react-kanban-card-adder-form {
   border-radius: 3px;

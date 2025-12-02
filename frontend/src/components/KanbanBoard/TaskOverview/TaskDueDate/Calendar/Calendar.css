@@ -1,0 +1,123 @@
+.calendar-backdrop {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--kanban-dialog-backdrop);
+  z-index: 10000;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.2s ease, opacity 0.2s ease;
+}
+
+.calendar-backdrop.open {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0.2s ease, opacity 0.2s ease;
+}
+
+.calendar-container {
+  background-color: var(--kanban-dialog-bg);
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px var(--kanban-dialog-shadow);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 90vw;
+}
+
+.calendars {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.react-datepicker {
+  border: 1px solid var(--kanban-border-light);
+  border-radius: 0.5rem;
+  font-family: inherit;
+}
+
+.react-datepicker__header {
+  background-color: var(--kanban-column-bg);
+  border-bottom: 1px solid var(--kanban-border-light);
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 0.5rem;
+}
+
+.react-datepicker__current-month {
+  color: var(--kanban-text-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+.react-datepicker__day-name,
+.react-datepicker__day {
+  color: var(--kanban-text-primary);
+  width: 2rem;
+  line-height: 2rem;
+  margin: 0.2rem;
+}
+
+.react-datepicker__day:hover {
+  background-color: var(--kanban-column-bg);
+  border-radius: 50%;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__day--keyboard-selected {
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+}
+
+.react-datepicker__day--disabled {
+  color: var(--kanban-text-tertiary);
+  cursor: not-allowed;
+}
+
+.react-datepicker__navigation {
+  top: 0.5rem;
+}
+
+.react-datepicker__navigation-icon::before {
+  border-color: var(--kanban-text-secondary);
+}
+
+.calendar-action-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.calendar-cancel-button {
+  background-color: var(--kanban-border-light);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.calendar-cancel-button:hover {
+  background-color: var(--kanban-bg-hover);
+}
+
+.calendar-apply-button {
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: white;
+  background-color: var(--kanban-apply-button-bg);
+}
+
+.calendar-apply-button:hover {
+  background-color: var(--kanban-apply-button-hover);
+}

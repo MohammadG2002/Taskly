@@ -1,10 +1,27 @@
-import React from "react";
+import React, { Fragment } from "react";
 import "./TaskOverview.css";
+import type { BoardCard } from "../../../types/BoardCard";
+import CardTitle from "./CardTitle/CardTitle";
+import sections from "./sections";
 
-const TaskOverview = () => {
+interface TaskOverviewProps {
+  selectedCard: BoardCard;
+}
+
+const TaskOverview = ({ selectedCard }: TaskOverviewProps) => {
   return (
     <div>
-      <h2>Task Overview Component</h2>
+      <CardTitle selectedCard={selectedCard} />
+      <div className="task-overview-container">
+        {sections.map((section) => (
+          <Fragment key={section.label}>
+            <div className="task-field">
+              <h4>{section.label}</h4>
+              <section.component card={selectedCard} />
+            </div>
+          </Fragment>
+        ))}
+      </div>
     </div>
   );
 };
