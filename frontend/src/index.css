@@ -51,6 +51,8 @@ body {
   --border-gray: 1px solid #ccc;
   --border-gray-active: #bdbdbd;
 
+  --comment-bar-height: 8.375rem;
+
   /* Kanban component-specific variables */
   --kanban-dashed-border-color: #eee;
   --kanban-add-column-hover-bg: #f0f0f08c;
@@ -59,6 +61,8 @@ body {
   --kanban-counter-bg: #4949492a;
 
   /* Kanban colors */
+  --kanban-border-color: #ccc;
+  --kanban-blue: #007bff;
   --kanban-column-bg: #f4f6f8;
   --kanban-card-bg: #fff;
   --kanban-card-shadow: rgba(0, 0, 0, 0.1);

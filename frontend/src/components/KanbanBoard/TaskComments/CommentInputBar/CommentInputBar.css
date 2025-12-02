@@ -1,0 +1,87 @@
+.comment-input-bar-container {
+  display: flex;
+  align-items: flex-start;
+  min-height: var(--comment-bar-height);
+  padding: 1.5rem 0;
+}
+
+.user-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+  flex: 0 0 auto;
+}
+
+.user-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.comment-input-bar {
+  border: 1px solid var(--kanban-border-color);
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  width: 100%;
+}
+
+.comment-input-bar textarea {
+  width: 100%;
+  border: none;
+  resize: none;
+  font-size: 0.7rem;
+  font-family: inherit;
+  outline: none;
+  background-color: transparent;
+}
+
+.comment-input-bar-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.comment-input-bar-attach {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.attach-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, filter 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.attach-button:hover {
+  background-color: var(--kanban-action-hover);
+}
+
+.attach-button img {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.send-button {
+  background-color: var(--kanban-text-primary);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 600;
+  flex: 0 0 auto;
+  height: 2.25rem;
+}
+
+.send-button:hover {
+  opacity: 0.9;
+}

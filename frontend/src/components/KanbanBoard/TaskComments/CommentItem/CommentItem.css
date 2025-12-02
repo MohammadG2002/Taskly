@@ -47,4 +47,9 @@
 .comment-content img {
   max-width: 100%;
   border-radius: 0.5rem;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+.comment-content img:hover {
+  opacity: 0.8;
 }

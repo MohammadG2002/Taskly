@@ -33,6 +33,7 @@ const AttachmentList = ({
       plugins={[Zoom, Slideshow, Fullscreen, Counter, Thumbnails]}
       counter={{ container: { style: { top: "unset", bottom: 0 } } }}
       styles={{ root: { zIndex: 99999 } }}
+      controller={{ closeOnBackdropClick: true }}
     />
   );
 };
