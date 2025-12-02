@@ -26,10 +26,20 @@
   gap: 0.25rem;
 }
 
+.comment-details div {
+  display: flex;
+  justify-content: space-between;
+}
+
 .comment-details h3 {
   font-size: 0.75rem;
   font-weight: 400;
   color: var(--kanban-text-primary);
+}
+
+.comment-details span {
+  font-size: 0.65rem;
+  color: var(--kanban-text-secondary);
 }
 
 .comment-details p {

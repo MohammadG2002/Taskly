@@ -15,7 +15,10 @@ const CommentItem = ({ comment }: CommentItemProps) => {
         <img src={comment.user.avatar} alt={comment.user.name} />
       </div>
       <div className="comment-details">
-        <h3 className="comment-author">{comment.user.name}</h3>
+        <div>
+          <h3 className="comment-author">{comment.user.name}</h3>
+          <span className="comment-timestamp">3 hours</span>
+        </div>
         <p className="comment-content">
           {comment.attachments &&
             (comment.attachments.length == 0 ? null : (
