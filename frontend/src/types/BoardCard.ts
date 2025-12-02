@@ -1,5 +1,6 @@
 import type { Priority } from "./Priority";
 import type { User } from "./User";
+import type { Comment } from "./Comment";
 import type { Label } from "./Label";
 
 export interface BoardCard {
@@ -15,5 +16,5 @@ export interface BoardCard {
   attachments: string[];
   assignees: User[];
   subtasks: number[];
-  comments: number[];
+  comments: Comment[];
 }

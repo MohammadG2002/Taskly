@@ -1,4 +1,5 @@
 import usersJson from "./users.json";
+import cardComments from "./cardComments";
 import type { BoardCard } from "../types/BoardCard";
 import type { User } from "../types/User";
 import { Priority } from "../types/Priority";
@@ -22,8 +23,8 @@ const kanbanCards: Record<number, BoardCard[]> = {
       description: "Add capability to add a card in a column",
       attachments: ["/attachments/cover-12.webp", "/attachments/cover-14.webp"],
       assignees: [users[1], users[2], users[0], users[1]],
-  subtasks: [1, 2, 3],
-      comments: [1],
+      comments: [cardComments[0], cardComments[1]],
+      subtasks: [1, 2, 3],
     },
     {
       columnId: 1,
@@ -37,8 +38,8 @@ const kanbanCards: Record<number, BoardCard[]> = {
       description: "Create wireframes and mockups for the homepage",
       attachments: ["/attachments/cover-13.webp"],
       assignees: [users[0]],
-  subtasks: [4, 5, 6],
-      comments: [2],
+      comments: [cardComments[2]],
+      subtasks: [4, 5, 6],
     },
   ],
   2: [

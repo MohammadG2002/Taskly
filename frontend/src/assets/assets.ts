@@ -30,6 +30,7 @@ import comment from "./comment.svg";
 import sixDots from "./six-dots.svg";
 import like from "./like.svg";
 import liked from "./liked.svg";
+import attachImg from "./attach-image.svg";
 import upload from "./upload.svg";
 
 export const assets = {
@@ -65,5 +66,6 @@ export const assets = {
   sixDots,
   like,
   liked,
+  attachImg,
   upload,
 };
