@@ -1,67 +1,49 @@
 import { useMemo, useState } from "react";
 import type { BoardCard } from "../../../types/BoardCard";
 import "./TaskSubtasks.css";
-import subtasksJson from "../../../mocks/subtasks.json";
-
-type Subtask = {
-  id: number;
-  text: string;
-  checked: boolean;
-};
+import {
+  getInitialSubtasks,
+  type Subtask,
+} from "../../../utils/getInitialSubtasks";
+import { getSubtasksProgress } from "../../../utils/getSubtasksProgress";
+import {
+  toggleSubtask,
+  addSubtaskItem,
+} from "../../../utils/subtasksHandlers";
 
 interface Props {
   selectedCard: BoardCard;
 }
 
 const TaskSubtasks = ({ selectedCard }: Props) => {
-  const cardKey = String(selectedCard?.id ?? "");
-
-  const initial: Subtask[] = useMemo(() => {
-    const data = subtasksJson as Record<string, Subtask[]>;
-    const cardSubtaskIds: number[] | undefined = selectedCard?.subtasks;
-    if (Array.isArray(cardSubtaskIds) && cardSubtaskIds.length > 0) {
-      const result: Subtask[] = [];
-      for (const id of cardSubtaskIds) {
-        // search each key's array for the subtask with the matching id
-        for (const key in data) {
-          const found = data[key].find((s) => s.id === id);
-          if (found) {
-            result.push(found);
-            break;
-          }
-        }
-      }
-      return result;
-    }
-    const byKey = (subtasksJson as Record<string, Subtask[]>)[cardKey];
-    return Array.isArray(byKey) ? byKey : [];
-  }, [cardKey, selectedCard?.subtasks]);
+  const initial = useMemo(
+    () => getInitialSubtasks(selectedCard?.id, selectedCard?.subtasks),
+    [selectedCard?.id, selectedCard?.subtasks]
+  );
 
   const [items, setItems] = useState<Subtask[]>(initial);
   const [newText, setNewText] = useState("");
 
-  const completed = items.filter((s) => s.checked).length;
-  const total = items.length;
-  const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
+  const { completed, total, percent } = getSubtasksProgress(items);
 
-  function toggle(id: number) {
-    setItems((prev) => prev.map((s) => (s.id === id ? { ...s, checked: !s.checked } : s)));
-  }
+  const handleToggle = (id: number) => {
+    setItems((prev) => toggleSubtask(prev, id));
+  };
 
-  function addSubtask() {
-    if (!newText.trim()) return;
-    const nextId = items.length ? Math.max(...items.map((i) => i.id)) + 1 : 1;
-    const newSub: Subtask = { id: nextId, text: newText.trim(), checked: false };
-    setItems((prev) => [...prev, newSub]);
+  const handleAddSubtask = () => {
+    setItems((prev) => addSubtaskItem(prev, newText));
     setNewText("");
-  }
+  };
 
   return (
     <div className="task-subtasks-root">
       <div className="task-subtasks-header">
         <div className="task-subtasks-count">{`${completed} of ${total}`}</div>
         <div className="task-subtasks-progress">
-          <div className="task-subtasks-progress-bar" style={{ width: `${percent}%` }} />
+          <div
+            className="task-subtasks-progress-bar"
+            style={{ width: `${percent}%` }}
+          />
         </div>
       </div>
 
@@ -69,12 +51,18 @@ const TaskSubtasks = ({ selectedCard }: Props) => {
         {items.map((s) => (
           <li key={s.id} className="task-subtasks-item">
             <label>
-              <input type="checkbox" checked={s.checked} onChange={() => toggle(s.id)} />
+              <input
+                type="checkbox"
+                checked={s.checked}
+                onChange={() => handleToggle(s.id)}
+              />
               <span className={s.checked ? "checked" : ""}>{s.text}</span>
             </label>
           </li>
         ))}
-        {items.length === 0 && <li className="task-subtasks-empty">No subtasks yet</li>}
+        {items.length === 0 && (
+          <li className="task-subtasks-empty">No subtasks yet</li>
+        )}
       </ul>
 
       <div className="task-subtasks-adder">
@@ -82,9 +70,11 @@ const TaskSubtasks = ({ selectedCard }: Props) => {
           placeholder="Add subtask"
           value={newText}
           onChange={(e) => setNewText(e.target.value)}
-          onKeyDown={(e) => e.key === "Enter" && addSubtask()}
+          onKeyDown={(e) => e.key === "Enter" && handleAddSubtask()}
         />
-        <button onClick={addSubtask}>Add</button>
+        <button type="button" onClick={handleAddSubtask}>
+          Add
+        </button>
       </div>
     </div>
   );
