@@ -10,8 +10,8 @@ interface CalendarProps {
   dueDate: Date;
   setStart: (date: Date) => void;
   setDue: (date: Date) => void;
-  onStartDateChange?: (date: Date) => void;
-  onDueDateChange?: (date: Date) => void;
+  onStartDateChange?: (date: Date | null) => void;
+  onDueDateChange?: (date: Date | null) => void;
   show: boolean;
   onClose: () => void;
 }

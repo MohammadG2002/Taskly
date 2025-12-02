@@ -19,7 +19,7 @@ const TaskAssignees = ({ card }: { card: BoardCard }) => {
       <Tooltip text="Add Assignee">
         <div
           className="add-assignee-container"
-          onClick={() => setShowContacts(!showContacts)}
+          onClick={() => setShowContacts((prev) => !prev)}
         >
           +
         </div>

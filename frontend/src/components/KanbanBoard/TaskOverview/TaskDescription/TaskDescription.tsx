@@ -9,6 +9,7 @@ const TaskDescription = ({ card }: { card: BoardCard }) => {
 
   useEffect(() => {
     setIsFocused(false);
+    setNewDescription(card.description);
   }, [card]);
 
   return (
