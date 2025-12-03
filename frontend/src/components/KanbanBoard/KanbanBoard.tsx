@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import type { BoardCard } from "../../types/BoardCard";
 import type { ColumnHeaderBag } from "../../types/ColumnHeaderBag";
 import { UncontrolledBoard } from "@caldwell619/react-kanban";
@@ -10,7 +10,6 @@ import ColumnHeader from "./ColumnHeader/ColumnHeader";
 import KanbanCard from "./KanbanCard/KanbanCard";
 import usePersistentColumnTitles from "../../hooks/usePersistentColumnTitles";
 import KanbanTaskbar from "./KanbanTaskbar/KanbanTaskbar";
-import handleCardRemove from "../../utils/handleCardRemove";
 import handleTaskbarClose from "../../utils/handleTaskbarClose";
 import handleCardSelect from "../../utils/handleCardSelect";
 import createWrappedBag from "../../utils/createWrappedBag";
