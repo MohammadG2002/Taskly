@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./WorkspaceSelector.css";
 import workspaces from "../../../../mocks/workspaces.json";
 import { assets } from "../../../../assets/assets";
 import WorkspaceItem from "./WorkspaceItem/WorkspaceItem";
-import { Link } from "react-router-dom";
 
 const WorkspaceSelector = () => {
   const [currentWorkspace, setCurrentWorkspace] = useState(workspaces[0]);
