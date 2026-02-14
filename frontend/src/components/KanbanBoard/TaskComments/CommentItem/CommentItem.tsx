@@ -12,7 +12,11 @@ const CommentItem = ({ comment }: CommentItemProps) => {
   return (
     <li className="task-comment-item">
       <div className="comment-icon">
-        <img src={comment.user.avatar} alt={comment.user.name} />
+        <img
+          src={comment.user.avatar}
+          alt={comment.user.name}
+          className="icon-image"
+        />
       </div>
       <div className="comment-details">
         <div>

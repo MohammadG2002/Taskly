@@ -20,6 +20,3 @@
 .react-kanban-column input:focus {
   outline: none;
 }
-
-.react-kanban-board div::-webkit-scrollbar {
-}
