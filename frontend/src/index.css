@@ -8,6 +8,8 @@
   text-decoration: none;
   color: black;
   font-weight: var(--font-regular);
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;
 }
 
 html,

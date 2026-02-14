@@ -12,7 +12,7 @@
   min-height: 2.5rem;
 }
 
-h4 {
+.task-overview-container h4 {
   margin: 0;
   font-size: 0.7rem;
   font-weight: 600;
@@ -25,7 +25,7 @@ h4 {
   align-self: flex-start;
 }
 
-img {
+.task-overview-container img {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;

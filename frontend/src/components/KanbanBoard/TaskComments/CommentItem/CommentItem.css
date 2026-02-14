@@ -13,7 +13,7 @@
   flex: 0 0 auto;
 }
 
-.comment-icon img {
+.comment-icon .comment-attachment-preview {
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -54,12 +54,12 @@
   gap: 0.5rem;
 }
 
-.comment-content img {
+.comment-content .comment-attachment-preview {
   max-width: 100%;
   border-radius: 0.5rem;
   cursor: pointer;
   transition: opacity 0.2s ease;
 }
-.comment-content img:hover {
+.comment-content .comment-attachment-preview:hover {
   opacity: 0.8;
 }

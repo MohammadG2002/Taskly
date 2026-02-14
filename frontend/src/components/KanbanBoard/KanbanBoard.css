@@ -4,7 +4,9 @@
   min-width: 100%;
   height: fit-content;
   scrollbar-width: auto;
-  scrollbar-color: var(--kanban-scrollbar-thumb) var(--kanban-scrollbar-track);
+  scrollbar-color: var(--kanban-scrollbar-thumb);
+  -ms-overflow-style: auto; /* IE/Edge */
+  overflow-x: scroll;
 }
 
 .react-kanban-column {
@@ -17,4 +19,7 @@
 
 .react-kanban-column input:focus {
   outline: none;
+}
+
+.react-kanban-board div::-webkit-scrollbar {
 }

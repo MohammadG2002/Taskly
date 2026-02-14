@@ -6,6 +6,8 @@
   height: fit-content;
   margin-top: var(--kanban-header-height);
   overflow: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .kanban-header {
@@ -45,4 +47,5 @@
   );
   overflow-x: scroll;
   margin-top: var(--kanban-header-height);
+  -ms-overflow-style: none;
 }
