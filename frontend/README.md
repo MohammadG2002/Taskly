@@ -1,73 +1,118 @@
-# React + TypeScript + Vite
+# Taskly – Kanban Task Management (Training Project)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Taskly is the second training project I built during my internship at **ASAL Technologies** and my first experience developing in a collaborative team environment.
 
-Currently, two official plugins are available:
+The application simulates a Kanban-based task management system using modern React architecture, mock data, and third-party libraries to replicate real-world workflows.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Built with scalability, structure, and teamwork practices in mind.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Project Highlights
 
-## Expanding the ESLint configuration
+- 👥 First collaborative team project
+- ⚛️ Built with React + TypeScript
+- ⚡ Powered by Vite
+- 🗂️ Kanban board task management
+- 🔐 Simulated user authentication (mock data)
+- 📱 Fully responsive design
+- 🧩 Clean and modular project structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 📦 Key Libraries Used
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+To enhance functionality and simulate real-world application behavior, the project integrates:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **@caldwell619/react-kanban** — Kanban board functionality
+- **YARL (Yet Another React Lightbox)** — Image slideshow
+- **react-datepicker** — Date selection
+- Additional supporting packages for UI and state handling
+
+These packages were integrated and customized to fit the project structure and TypeScript typing.
+
+---
+
+## 🛠 Tech Stack
+
+- React
+- TypeScript
+- Vite
+- CSS Modules / Custom Styling
+- Mock Data for tasks and authentication
+
+---
+
+## 🎯 Purpose of the Project
+
+This project was built to:
+
+- Practice collaborative development
+- Improve understanding of component architecture
+- Work with third-party libraries in TypeScript
+- Simulate authentication flows
+- Implement Kanban-style task management
+- Follow structured code organization
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+├── components/
+├── pages/
+├── hooks/
+├── types/
+├── utils/
+├── assets/
+└── styles/
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📦 Installation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1. Clone the repository
+
+> git clone https://github.com/MohammadG2002/Taskly.git
+
+2. Navigate into the project
+
+> cd Taskly/frontend
+
+3. Install dependencies
+
+> npm install
+
+4. Start development server
+
+> npm run dev
+
+---
+
+## 🧠 What I Learned
+
+- Working in a team environment
+- Managing feature-based structure
+- Handling third-party libraries with TypeScript
+- Maintaining clean and readable code
+- Coordinating UI consistency across components
+
+---
+
+## 👨‍💻 Author
+
+**Mohammad Ghanim**
+Front-End Developer (React + TypeScript)
+
+Internship Project – ASAL Technologies
+
+LinkedIn:
+[https://www.linkedin.com/in/mohammad-ghanim-6286b7294/](https://www.linkedin.com/in/mohammad-ghanim-6286b7294/)
+
+---
+
+## 📌 Status
+
+Training project completed. Open for further enhancements and backend integration.
