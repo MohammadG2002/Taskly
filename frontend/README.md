@@ -1,71 +1,66 @@
-# Taskly – Kanban Task Management (Training Project)
+# Taskly – Kanban Task Management
 
-Taskly is the second training project I built during my internship at **ASAL Technologies** and my first experience developing in a collaborative team environment.
+#### *Structured collaboration. Practical frontend architecture.*
+
+Taskly is the second training project I built during my internship at ASAL Technologies and my first project developed within a collaborative team environment.
 
 The application simulates a Kanban-based task management system using modern React architecture, mock data, and third-party libraries to replicate real-world workflows.
 
-Built with scalability, structure, and teamwork practices in mind.
+Designed with scalability, clean structure, and teamwork practices in mind.
 
 ---
 
-## 🚀 Project Highlights
+## 🌐 Live Preview
 
-- 👥 First collaborative team project
-- ⚛️ Built with React + TypeScript
-- ⚡ Powered by Vite
-- 🗂️ Kanban board task management
-- 🔐 Simulated user authentication (mock data)
-- 📱 Fully responsive design
-- 🧩 Clean and modular project structure
+[taskly-asal.vercel.app](https://taskly-asal.vercel.app)
 
 ---
 
-## 📦 Key Libraries Used
+## 🚀 Features
 
-To enhance functionality and simulate real-world application behavior, the project integrates:
+* ⚛️ Built with React + TypeScript
+* 🗂️ Interactive Kanban board implementation
+* 🔐 Simulated authentication using mock data
+* 📅 Task date selection with date picker integration
+* 🖼️ Image slideshow functionality
+* 📱 Fully responsive across all devices
+* 🧩 Modular and scalable project structure
+* ⚡ Fast development powered by Vite
 
-- **@caldwell619/react-kanban** — Kanban board functionality
-- **YARL (Yet Another React Lightbox)** — Image slideshow
-- **react-datepicker** — Date selection
-- Additional supporting packages for UI and state handling
+---
 
-These packages were integrated and customized to fit the project structure and TypeScript typing.
+## 🧩 Libraries & Integrations
+
+Functionality enhanced using ready-made packages:
+
+* `@caldwell619/react-kanban` – Kanban board system
+* `YARL (Yet Another React Lightbox)` – Image slideshow
+* `react-datepicker` – Date picker component
+
+These libraries were integrated and adapted within a TypeScript-based architecture.
 
 ---
 
 ## 🛠 Tech Stack
 
-- React
-- TypeScript
-- Vite
-- CSS Modules / Custom Styling
-- Mock Data for tasks and authentication
-
----
-
-## 🎯 Purpose of the Project
-
-This project was built to:
-
-- Practice collaborative development
-- Improve understanding of component architecture
-- Work with third-party libraries in TypeScript
-- Simulate authentication flows
-- Implement Kanban-style task management
-- Follow structured code organization
+* React
+* TypeScript
+* Vite
+* CSS Modules
+* Mock Data for tasks and authentication
 
 ---
 
 ## 📂 Project Structure
 
 ```
-src/
-├── components/
-├── pages/
-├── hooks/
-├── types/
-├── utils/
-├── assets/
+src/  
+├── assets/  
+├── components/  
+├── pages/  
+├── hooks/  
+├── types/  
+├── utils/  
 └── styles/
 ```
 
@@ -75,11 +70,11 @@ src/
 
 1. Clone the repository
 
-> git clone https://github.com/MohammadG2002/Taskly.git
+> git clone [https://github.com/MohammadG2002/Taskly.git](https://github.com/MohammadG2002/Taskly.git)
 
 2. Navigate into the project
 
-> cd Taskly/frontend
+> cd Taskly
 
 3. Install dependencies
 
@@ -91,28 +86,31 @@ src/
 
 ---
 
-## 🧠 What I Learned
+## 🎯 Purpose
 
-- Working in a team environment
-- Managing feature-based structure
-- Handling third-party libraries with TypeScript
-- Maintaining clean and readable code
-- Coordinating UI consistency across components
+This project represents an important milestone in my development journey, focusing on:
+
+* Collaborative team development
+* Structured component architecture
+* Integration of third-party libraries with TypeScript
+* Clean and maintainable code practices
+* Simulating real-world application workflows
 
 ---
 
-## 👨‍💻 Author
+## 👨‍💻 About Me
 
-**Mohammad Ghanim**
+Mohammad Ghanim
 Front-End Developer (React + TypeScript)
 
-Internship Project – ASAL Technologies
+I enjoy building structured, scalable interfaces and improving how users interact with task-based systems.
 
 LinkedIn:
-[https://www.linkedin.com/in/mohammad-ghanim-6286b7294/](https://www.linkedin.com/in/mohammad-ghanim-6286b7294/)
+[Mohammad Ghanim](https://www.linkedin.com/in/mohammad-ghanim-6286b7294)
 
 ---
 
 ## 📌 Status
 
-Training project completed. Open for further enhancements and backend integration.
+Training project completed. Built during internship at ASAL Technologies.
+Open to future enhancements and backend integration.
